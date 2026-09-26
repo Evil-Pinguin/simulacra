@@ -1,7 +1,6 @@
-# Оформление интерфейса «Simulacra».
+# Оформление интерфейса и интерактивные механики «Simulacra».
 
 # Меню выбора: мир гаснет в черноте, остаются только варианты.
-# Определяется после screens.rpy и заменяет стандартный экран choice.
 screen choice(items):
 
     add Solid("#000000")
@@ -18,7 +17,13 @@ screen choice(items):
             textbutton i.caption action i.action
 
 
-# Механика подбора частот. ###############################################
+# Позиция Ким на сцене.
+transform kim_right:
+    xalign 0.82
+    yalign 1.0
+
+
+# МЕХАНИКА 1: подбор частот. #############################################
 # Игрок ведёт ползунок несущей частоты; чем ближе к цели — тем ровнее
 # отклик. Фиксация проходит только в зоне резонанса.
 
@@ -60,3 +65,135 @@ screen freq_tuner(target=62.8, tol=3.0):
             textbutton "ЗАФИКСИРОВАТЬ ЧАСТОТУ":
                 xalign 0.5
                 action Return(abs(freq_value - target) <= tol)
+
+
+# МЕХАНИКА 2: кабинет-хаб. ###############################################
+# Спокойная зона: игрок сам решает, что осмотреть. Работать можно сесть
+# только после кофе — сцена с пятном обязательна для сюжета.
+
+default office_done = set()
+
+screen office_hub():
+
+    modal True
+
+    if "coffee" not in office_done:
+        textbutton "▸ Кофемашина":
+            xalign 0.88
+            yalign 0.42
+            action Return("coffee")
+
+    if "papers" not in office_done:
+        textbutton "▸ Бумаги на столе":
+            xalign 0.32
+            yalign 0.78
+            action Return("papers")
+
+    if "window" not in office_done:
+        textbutton "▸ Окно":
+            xalign 0.07
+            yalign 0.30
+            action Return("window")
+
+    if "chair" not in office_done:
+        textbutton "▸ Кресло":
+            xalign 0.63
+            yalign 0.62
+            action Return("chair")
+
+    if "coffee" in office_done:
+        textbutton "Сесть работать":
+            xalign 0.5
+            yalign 0.96
+            action Return("work")
+
+
+# МЕХАНИКА 3: калибровка нейрокортекса. ##################################
+# Три контура — амплитуда, фаза, усиление. Тест проходит, только когда
+# все три сведены с эталоном.
+
+default cal_amp = 20.0
+default cal_phase = 85.0
+default cal_gain = 10.0
+
+screen neuro_calib(ta=34.0, tp=71.5, tg=52.0, tol=4.0):
+
+    modal True
+
+    add Solid("#04070a")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xpadding 60
+        ypadding 40
+        background Solid("#0a1014")
+
+        vbox:
+            spacing 18
+            xsize 960
+
+            text "MNEMOSYNE // КАЛИБРОВКА НЕЙРОКОРТЕКСА" color "#7fd4a8" size 26
+            text "Сведите три контура с эталоном. Допуск — узкий." color "#517263" size 18
+
+            text "АМПЛИТУДА: [cal_amp:.1f]" color "#9fd8b8" size 20
+            bar value VariableValue("cal_amp", 100.0) xsize 960
+            if abs(cal_amp - ta) <= tol:
+                text "— контур сведён" color "#c8ffd8" size 17
+            else:
+                text "— рассогласование" color "#33473d" size 17
+
+            text "ФАЗА: [cal_phase:.1f]" color "#9fd8b8" size 20
+            bar value VariableValue("cal_phase", 100.0) xsize 960
+            if abs(cal_phase - tp) <= tol:
+                text "— контур сведён" color "#c8ffd8" size 17
+            else:
+                text "— рассогласование" color "#33473d" size 17
+
+            text "УСИЛЕНИЕ: [cal_gain:.1f]" color "#9fd8b8" size 20
+            bar value VariableValue("cal_gain", 100.0) xsize 960
+            if abs(cal_gain - tg) <= tol:
+                text "— контур сведён" color "#c8ffd8" size 17
+            else:
+                text "— рассогласование" color "#33473d" size 17
+
+            textbutton "ЗАПУСТИТЬ ТЕСТ":
+                xalign 0.5
+                action Return(abs(cal_amp - ta) <= tol and abs(cal_phase - tp) <= tol and abs(cal_gain - tg) <= tol)
+
+
+# МЕХАНИКА 4: сканер слоя памяти. ########################################
+# Сетка секторов 3×3. Игрок ищет точку перехода по отклику «теплее —
+# холоднее».
+
+screen mem_scanner():
+
+    modal True
+
+    add Solid("#000000c8")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xpadding 50
+        ypadding 40
+        background Solid("#0a1014")
+
+        vbox:
+            spacing 24
+
+            text "СКАНИРОВАНИЕ СЛОЯ // выберите сектор" color "#7fd4a8" size 24 xalign 0.5
+
+            grid 3 3:
+                spacing 14
+                xalign 0.5
+
+                textbutton "А1" xsize 150 ysize 90 action Return(0)
+                textbutton "А2" xsize 150 ysize 90 action Return(1)
+                textbutton "А3" xsize 150 ysize 90 action Return(2)
+                textbutton "Б1" xsize 150 ysize 90 action Return(3)
+                textbutton "Б2" xsize 150 ysize 90 action Return(4)
+                textbutton "Б3" xsize 150 ysize 90 action Return(5)
+                textbutton "В1" xsize 150 ysize 90 action Return(6)
+                textbutton "В2" xsize 150 ysize 90 action Return(7)
+                textbutton "В3" xsize 150 ysize 90 action Return(8)
