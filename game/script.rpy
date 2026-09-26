@@ -3,7 +3,7 @@
 # пациента №117-У — и в чужой записи впервые слышит собственный шов.
 # Игрок видит мир только глазами Майка — его самого не показываем никогда.
 
-define m = Character("// МАЙК", color="#aad4ff")
+define m = Character("sync_name('МАЙК')", dynamic=True, color="#aad4ff")
 define k = Character("// КИМ", color="#ffb3c8")
 define li = Character("// ЛИ", color="#d8c37a")
 define sys = Character("// MNEMOSYNE", color="#7fd4a8")
@@ -18,15 +18,26 @@ default tv_off = False
 
 label start:
 
+    $ chapter_tag = "01"
+
+    if persistent.pass_number > 1:
+        $ restore_pass_memory()
+
     scene vhs static
     pause 0.25
 
     scene black
     with fade
 
+    $ start_session_line = variant([
+        "Обнаружена незавершённая сессия. Продолжить чтение? …да.",
+        "Обнаружена незавершённая сессия. Повторное чтение. Продолжить? …да.",
+        "Обнаружена незавершённая сессия. Чтение №" + str(persistent.pass_number) + ". Продолжить? …да.",
+    ])
+
     sys "{cps=45}MNEMOSYNE v9.4 — инициализация…{/cps}"
     sys "{cps=45}Архив подключён. Целостность носителя: 98.1%%.{/cps}"
-    sys "{cps=45}Обнаружена незавершённая сессия. Продолжить чтение? …да.{/cps}"
+    sys "{cps=45}[start_session_line]{/cps}"
     sys "{cps=45}ЗАПИСЬ 01 // «Собственные швы». Воспроизведение.{/cps}"
 
     centered "{i}«Забыть — не значит исправить.\nИсправить можно только помня.»{/i}"
@@ -66,6 +77,7 @@ label ch1_tuning_locked:
     sys "Несущая зафиксирована: 62.8. Резонанс стабилен."
 
     $ unlock_ach("ach_resonance")
+    $ add_sync(5)
 
     "Есть. Обычно на этом всё: спектры в отчёт, отчёт в архив, архив в никуда."
     "Но под несущей что-то есть. Вторая волна — тонкая, как волос в фотоплёнке."
@@ -168,6 +180,8 @@ label ch1_dream_field:
 
     m "…Откуда я знаю это поле?"
 
+    call fragment_found("f_field")
+
 
 # АКТ I: ПЕРВАЯ ТРЕЩИНА ##################################################
 
@@ -189,6 +203,10 @@ label ch1_day2:
     "Единственный человек на этаже, у которого улыбка доходит до глаз."
 
     $ unlock_ach("ach_met_kim")
+
+    $ kim_greet = variant(["Ты сегодня рано.", "Ты опять опоздал.", "Ты сегодня рано. Опять."])
+
+    k "[kim_greet]"
 
     k "Читаешь? «Десять ранних признаков расщепления сознания»."
 
@@ -285,6 +303,9 @@ label ch1_office_loop:
     call screen office_hub
 
     if _return == "coffee":
+
+        if "coffee" not in office_done:
+            $ add_sync(3)
 
         $ office_done.add("coffee")
 
@@ -390,6 +411,8 @@ label ch1_office_loop:
 
     $ journal_add("visitor")
 
+    call fragment_found("f_visitor")
+
     sys "Подключение завершено. Требуется калибровка контуров."
 
 label ch1_calib:
@@ -449,6 +472,20 @@ label ch1_nap:
 
             "Я стою. Коридор сам тянется мимо меня, как плёнка через лентопротяг."
             "Звонок всё ближе. Или это не звонок."
+
+    "Я останавливаюсь и смотрю. Здесь всё состоит из деталей — и какая-то из них не моя."
+
+    $ unlock_replay("corridor")
+
+    call fragment_found("f_corridor")
+
+label ch1_corridor_look:
+
+    call screen focus_scene(CORRIDOR_HOTSPOTS, corridor_seen)
+
+    if _return != "leave":
+        call focus_examine(_return, corridor_seen, CORRIDOR_NOTES_1)
+        jump ch1_corridor_look
 
     scene black
     with vpunch
@@ -537,6 +574,16 @@ label ch1_dive:
 
     sys "Протокол «Глубокое погружение». Оператор: М. Точка входа: ранние слои."
 
+    scene bg door at handheld
+    show snow_real
+    with Dissolve(0.6)
+
+    "Дверь. Та самая, из сна: дерево, ручка, глазок. Только теперь за ней есть дом."
+    "Старый, деревянный, с тёмными окнами. Я его не знаю."
+    "Я тянусь к ручке—"
+
+    call flashback_house
+
     scene bg room at handheld
     show dust_real
     with fade
@@ -618,6 +665,9 @@ label ch1_scan_done:
             k "Принято."
 
             $ unlock_ach("ach_anchor")
+            $ add_sync(4)
+
+            call fragment_found("f_key")
 
         "Не трогать":
 
@@ -665,12 +715,17 @@ label ch1_scan_done:
 
             m "…Дверь. Она открылась."
 
+            $ add_sync(2)
+
         "Оставить":
 
             "Я не трогаю его. Источник лучше не глушить — по нему можно отследить, откуда идёт сигнал."
             "Помехи шуршат ровно, терпеливо. Как дыхание."
 
             $ unlock_ach("ach_not_alone")
+            $ add_sync(5)
+
+    call fragment_found("f_tv")
 
     k "Майк, порог перегружен. Выходи. Сейчас."
 
@@ -695,6 +750,7 @@ label ch1_scan_done:
     "Это уже рутина. Я привык."
 
     $ unlock_ach("ach_first_dive")
+    $ add_sync(5)
 
 
 # КОНЕЦ ГЛАВЫ ############################################################

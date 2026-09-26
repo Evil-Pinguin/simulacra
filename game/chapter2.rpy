@@ -9,6 +9,8 @@ default tried_unfold = False
 
 label ch2_start:
 
+    $ chapter_tag = "02"
+
     scene black
     with fade
 
@@ -75,6 +77,10 @@ label ch2_lobby:
     with dissolve
 
     show screen kim_idle
+
+    $ kim_greet = variant(["Ты опять опоздал.", "Ты сегодня рано.", "Ты опять опоздал. Опять."])
+
+    k "[kim_greet]"
 
     "Ким уже на месте. Я протягиваю ей стакан. Нормальный кофе. Не из машины."
 
@@ -189,6 +195,8 @@ label ch2_reports_done:
 
     $ journal_add("reports")
 
+    call fragment_found("f_badge")
+
     "Контур прогрелся. Зовут."
 
 
@@ -253,11 +261,21 @@ label ch2_dive:
 
     sys "Протокол «Восстановление». Оператор: М. Точка входа: ранние слои, дом."
 
+    scene bg door at handheld
+    show snow_real
+    with Dissolve(0.6)
+
+    "Дом. Опять. Дверь ждёт, будто и не закрывалась."
+
+    call flashback_return
+
     scene bg hall at handheld
     show dust_real
     with fade
 
     "Дом встречает меня как старого знакомого. Коридор, пальто, скрип половиц."
+
+    $ whisper("Ты вернулся. Я знал, что вернёшься.")
 
     if tv_off:
 
@@ -303,6 +321,8 @@ label ch2_dive:
 
     $ journal_add("figure")
 
+    call fragment_found("f_figure")
+
     "Потом он поворачивается и идёт вдоль забора."
 
     m "Я за ним."
@@ -315,6 +335,8 @@ label ch2_dive:
 label ch2_chase_intro:
 
     "Он не оборачивается. Он знает, что я иду следом."
+
+    $ whisper("Не беги. Я никуда не денусь.")
 
 label ch2_chase1:
 
@@ -365,6 +387,7 @@ label ch2_chase3:
 label ch2_chase_done:
 
     $ unlock_ach("ach_chase")
+    $ add_sync(6)
 
     hide will far
 
@@ -411,6 +434,8 @@ label ch2_flat:
     "Посередине стола лежит лист бумаги. Сложенный вчетверо — нет."
     "Развёрнутый."
 
+    $ whisper("Разверни. Пока они не успели.")
+
     m "…"
 
     "Я подхожу. Медленно. Как к спящему."
@@ -437,6 +462,10 @@ label ch2_flat:
     "Когда я снова смотрю на стол — лист сложен. Вчетверо."
 
     $ journal_add("flat")
+    $ add_sync(4)
+
+    if not frag_known("f_paper"):
+        call fragment_found("f_paper")
 
     k "Порог тридцать восемь и растёт рывками. Выходим. СЕЙЧАС, Майк."
 
@@ -539,6 +568,13 @@ label ch2_calib_yes:
 
     $ journal_remove("anomaly")
 
+    python:
+        add_sync(-15)
+        for _f in known_fragments():
+            if _f["src"] == "Майк":
+                frag_shift(_f["id"], -20)
+        renpy.show_screen("achievement_toast", "КАЛИБРОВКА", "фрагменты источника «Майк» теряют стабильность", "▮ АРХИВ")
+
     "Уже в дверях зачем-то оглядываюсь на стол."
     "На столе лежит лист бумаги. Сложенный вчетверо."
 
@@ -632,6 +668,16 @@ label ch2_calib_no:
     "Зелёный коридор. Звонок. Но теперь — не пустота."
     "Смех. Детский. Много голосов, из-за дверей, отовсюду."
 
+    "Я уже был здесь. Я смотрю — и коридор смотрит в ответ."
+
+label ch2_corridor_look:
+
+    call screen focus_scene(CORRIDOR_HOTSPOTS, corridor_seen2)
+
+    if _return != "leave":
+        call focus_examine(_return, corridor_seen2, CORRIDOR_NOTES_2)
+        jump ch2_corridor_look
+
     "В моей ладони — маленькая рука."
     "Кто-то ведёт меня по коридору. Или это я веду."
 
@@ -639,6 +685,9 @@ label ch2_calib_no:
     "И голос — не мой, но из моего горла:"
 
     m "«Не бойся. Это просто учебные сборы.»"
+
+    call fragment_found("f_hand")
+    $ add_sync(6)
 
     scene black
     with Dissolve(0.3)
@@ -675,6 +724,7 @@ label ch2_end:
     "Завтра — контакт."
 
     $ unlock_ach("ach_ch2")
+    $ persist_pass_memory()
 
     scene vhs static
     pause 0.4

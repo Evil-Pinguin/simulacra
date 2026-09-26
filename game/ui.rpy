@@ -38,6 +38,14 @@ init python:
         ("ach_gaze", "НЕ ОТВОДЯ ГЛАЗ", "Выдержать его взгляд до конца."),
         ("ach_11g", "АРХИВАРИУС", "Открыть повреждённый файл своими руками."),
         ("ach_ch3", "СТАДИЯ ТРИ", "Дочитать запись 03."),
+        ("ach_fragment", "ПЕРВЫЙ ФРАГМЕНТ", "Найти то, чего не должно быть в твоей голове."),
+        ("ach_focus", "МИКРО-ТРИГГЕР", "Задержать взгляд на нужной детали."),
+        ("ach_link", "СВЯЗЬ ОБНАРУЖЕНА", "Соединить два факта в Архиве."),
+        ("ach_detective", "СЛЕДОВАТЕЛЬ", "Пять связей в Архиве."),
+        ("ach_true_memory", "НАСТОЯЩЕЕ", "Собрать 11-G так, как было."),
+        ("ach_false_memory", "ЛОЖНОЕ", "Собрать 11-G так, как удобно."),
+        ("ach_sync50", "ЧУЖАЯ ПАМЯТЬ", "Синхронизация 50: чужие воспоминания как свои."),
+        ("ach_sync100", "СЛИЯНИЕ", "Синхронизация 100: две подписи становятся одной."),
     ]
 
     JOURNAL = {
@@ -108,6 +116,7 @@ screen main_menu():
         textbutton "НАЧАТЬ ЗАПИСЬ" style "mm_button" action Start()
         textbutton "ПРОДОЛЖИТЬ" style "mm_button" action ShowMenu("load")
         textbutton "ДОСТИЖЕНИЯ" style "mm_button" action ShowMenu("achievements")
+        textbutton "АРХИВ" style "mm_button" action ShowMenu("extras")
         textbutton "НАСТРОЙКИ" style "mm_button" action ShowMenu("preferences")
         textbutton "ВЫХОД" style "mm_button" action Quit(confirm=False)
 
@@ -181,34 +190,68 @@ screen journal_screen():
     modal True
     zorder 1500
 
+    default jtab = "diary"
+
     add Solid("#04070af0")
 
-    vbox:
-        xalign 0.5
-        yalign 0.5
-        spacing 26
+    # Шапка: заголовок, вкладки, синхронизация
+    hbox:
+        xpos 40
+        ypos 26
+        spacing 44
 
-        text "ДНЕВНИК ОПЕРАТОРА" size 36 color "#c8ffd8" font "fonts/game_serif.ttf" xalign 0.5
+        text "ДНЕВНИК ОПЕРАТОРА" size 30 color "#c8ffd8" font "fonts/game_serif.ttf" yalign 0.5
 
-        viewport:
-            xsize 1150
-            ysize 660
-            scrollbars "vertical"
-            mousewheel True
+        textbutton "ДНЕВНИК" style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "diary") selected (jtab == "diary")
+        textbutton ("ФРАГМЕНТЫ · " + str(len(found_fragments))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "frags") selected (jtab == "frags")
+        textbutton ("АРХИВ · " + str(len(archive_links)) + "/" + str(len(LINKS))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "archive") selected (jtab == "archive")
 
-            vbox:
-                spacing 34
+    if sync_level > 0:
+        text ("SYNC " + bar_text(sync_level) + " " + str(sync_level) + "  " + sync_stage()[1]):
+            xanchor 1.0
+            xpos 1880
+            ypos 34
+            size 15
+            color ("#ffffff" if sync_level >= 100 else "#7fd4a8")
+            font "fonts/game_mono.ttf"
 
-                if not journal_ids:
-                    text "Записей пока нет." size 22 color "#517263"
+    add Solid("#33473d") xpos 40 ypos 78 xsize 1840 ysize 1
 
-                for jid in journal_ids:
-                    vbox:
-                        spacing 8
-                        text JOURNAL[jid][0] size 27 color "#c8ffd8" font "fonts/game_serif.ttf"
-                        text JOURNAL[jid][1] size 20 color "#9fb8ac" font "fonts/game_serif.ttf"
+    fixed:
+        xpos 40
+        ypos 96
+        xsize 1840
+        ysize 860
 
-        textbutton "ЗАКРЫТЬ" style "mm_button" action Hide("journal_screen") xalign 0.5
+        if jtab == "diary":
+
+            viewport:
+                xsize 1150
+                ysize 780
+                scrollbars "vertical"
+                mousewheel True
+
+                vbox:
+                    spacing 34
+
+                    if not journal_ids:
+                        text "Записей пока нет." size 22 color "#517263"
+
+                    for jid in journal_ids:
+                        vbox:
+                            spacing 8
+                            text JOURNAL[jid][0] size 27 color "#c8ffd8" font "fonts/game_serif.ttf"
+                            text JOURNAL[jid][1] size 20 color "#9fb8ac" font "fonts/game_serif.ttf"
+
+        elif jtab == "frags":
+
+            use fragment_list
+
+        else:
+
+            use archive_board
+
+    textbutton "ЗАКРЫТЬ" style "mm_button" xpos 40 yalign 0.975 action Hide("journal_screen")
 
 
 # Меню выбора: мир гаснет, варианты парят слева и справа,
@@ -253,7 +296,7 @@ screen choice(items):
                 text_hover_color "#ffffff"
                 text_outlines [(2, "#04070a", 0, 0)]
                 at choice_float(idx * 0.18)
-                action i.action
+                action [Function(log_choice, i.caption), i.action]
 
 
 # Позиция Ким на сцене.
