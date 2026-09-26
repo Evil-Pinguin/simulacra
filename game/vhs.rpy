@@ -1,15 +1,30 @@
 # VHS-эстетика «Simulacra»: плёночная картинка — строчная развёртка, живое
-# зерно, покачивание ручной камеры и снег. Без служебных надписей.
+# зерно и покачивание ручной камеры. Плюс атмосферные частицы:
+# реалистичный снег для зимних сцен и пыль для старого дома.
 
 init python:
 
-    # Падающий снег поверх плёнки. Регистрируется с защитой от ошибок,
-    # чтобы сбой эффекта никогда не останавливал запуск игры.
+    # Снег в два слоя: дальний — мелкий и медленный, ближний — крупный
+    # и быстрый. Показывается только в заснеженных сценах.
     try:
-        _vhs_flake = Image("snowflake.png")
-        renpy.image("snow_fall", SnowBlossom(_vhs_flake, count=24, border=80, speed=80))
+        _flake_far = Image("snow far.png")
+        _flake_near = Image("snow near.png")
+        renpy.image("snow_real", Fixed(
+            SnowBlossom(_flake_far, count=70, border=60, xspeed=(-40, 40), yspeed=(70, 130)),
+            SnowBlossom(_flake_near, count=16, border=130, xspeed=(-90, 90), yspeed=(200, 320)),
+        ))
     except Exception:
-        renpy.image("snow_fall", Null())
+        renpy.image("snow_real", Null())
+
+    # Пыль старого дома: медленно плывущие пылинки в тёплом свете.
+    try:
+        _mote = Image("dust mote.png")
+        renpy.image("dust_real", Fixed(
+            SnowBlossom(_mote, count=30, border=40, xspeed=(-14, 14), yspeed=(8, 24)),
+            SnowBlossom(_mote, count=14, border=40, xspeed=(-24, 24), yspeed=(16, 42)),
+        ))
+    except Exception:
+        renpy.image("dust_real", Null())
 
 
 # Дыхание «плеча» — покачивание ручной камеры. Слегка с запасом кадра,
@@ -47,7 +62,6 @@ screen vhs_overlay():
 
     add "vhs scanlines"
     add "vhs static" at vhs_grain
-    add "snow_fall"
 
 
 init 999 python:

@@ -1,5 +1,45 @@
 # Оформление интерфейса и интерактивные механики «Simulacra».
 
+# ГЛАВНОЕ МЕНЮ в стиле Mnemosyne. ########################################
+
+style mm_button is default
+style mm_button:
+    background None
+    xpadding 0
+
+style mm_button_text is text:
+    size 30
+    color "#7fd4a8"
+    hover_color "#c8ffd8"
+
+screen main_menu():
+
+    tag menu
+
+    add "images/menubg.png"
+
+    vbox:
+        xpos 130
+        yalign 0.82
+        spacing 12
+
+        text "SIMULACRA" size 74 color "#c8ffd8"
+        text "MNEMOSYNE // архив записей" size 20 color "#517263"
+
+        null height 30
+
+        textbutton "НАЧАТЬ ЗАПИСЬ" style "mm_button" action Start()
+        textbutton "ПРОДОЛЖИТЬ" style "mm_button" action ShowMenu("load")
+        textbutton "НАСТРОЙКИ" style "mm_button" action ShowMenu("preferences")
+        textbutton "ВЫХОД" style "mm_button" action Quit(confirm=False)
+
+    text "ЗАПИСЬ 01 // 62.8 ед.":
+        xalign 0.97
+        yalign 0.96
+        size 16
+        color "#51726377"
+
+
 # Меню выбора: мир гаснет в черноте, остаются только варианты.
 screen choice(items):
 
@@ -20,11 +60,6 @@ screen choice(items):
 # Позиция Ким на сцене.
 transform kim_right:
     xalign 0.82
-    yalign 1.0
-
-# Позиция Резы.
-transform reza_right:
-    xalign 0.80
     yalign 1.0
 
 
