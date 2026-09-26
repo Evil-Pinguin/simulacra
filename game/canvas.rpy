@@ -1,8 +1,8 @@
 # «Рисование воспоминания» — реконструкция инцидента 11-G в «Simulacra».
 #
-# Майк собирает воспоминание на холсте 3×3 из семи фрагментов-фишек:
-# ребёнок, школа, рисунок, Майк, дверь, красная лампа, неизвестный объект.
-# Правильных мест — шесть. Один объект в это воспоминание не входит.
+# Майк собирает воспоминание на холсте 3×3 из шести фрагментов-фишек:
+# школа, рисунок, Майк, дверь, красная лампа, неизвестный объект.
+# Правильных мест — пять. Один объект в это воспоминание не входит.
 #
 # Результат: "true" (всё на месте, лишнего нет) / "partial" / "false".
 # Подсказки складываются из найденных фрагментов — Архив → фрагменты → реконструкция.
@@ -15,7 +15,6 @@ default canvas_placed = {}          # id фишки -> индекс клетки
 init python:
 
     CANVAS_PIECES = [
-        dict(id="child",   label="ребёнок",       glyph="☺", color="#c8ffd8"),
         dict(id="school",  label="школа",         glyph="⌂", color="#9fd8b8"),
         dict(id="drawing", label="рисунок",       glyph="✎", color="#e0b060"),
         dict(id="mike",    label="Майк",          glyph="◉", color="#aad4ff"),
@@ -29,7 +28,6 @@ init python:
     CANVAS_TRUTH = {
         "redlamp": 2,
         "door": 4,
-        "child": 5,
         "mike": 6,
         "drawing": 7,
         "school": 8,
@@ -38,9 +36,8 @@ init python:
     # Геометрия (1920×1080).
     CV_GX, CV_GY, CV_CELL, CV_GAP = 1040, 150, 220, 12
     CV_PIECE = 200
-    CV_TRAY = [(140, 170), (390, 170), (640, 170),
-               (140, 410), (390, 410), (640, 410),
-               (140, 650), (390, 650), (640, 650)]
+    CV_TRAY = [(140, 200), (390, 200), (640, 200),
+               (140, 470), (390, 470), (640, 470)]
 
     def cv_cell_pos(i):
         return (CV_GX + (i % 3) * (CV_CELL + CV_GAP),
@@ -104,7 +101,7 @@ init python:
         alien = "unknown" in store.canvas_placed
         if correct == len(CANVAS_TRUTH) and not alien:
             return "true"
-        if correct >= 4:
+        if correct >= 3:
             return "partial"
         return "false"
 
@@ -114,7 +111,7 @@ init python:
         if frag_known("f_alarm") or frag_known("f_redlamp"):
             hints.append("Красный свет — вверху справа. Я смотрел на него снизу.")
         if frag_known("f_hand"):
-            hints.append("Ребёнок стоял справа от двери. Дверь была в самой середине.")
+            hints.append("Дверь — в самой середине. Всё остальное было вокруг неё.")
         if frag_known("f_paper") or frag_known("f_visitor"):
             hints.append("Рисунок лежал внизу, посередине — между мной и школой.")
         if frag_known("f_erasure"):
@@ -122,7 +119,7 @@ init python:
         if frag_known("f_field") or frag_known("f_corridor"):
             hints.append("Школа — там, где кончается поле. Внизу справа.")
         if frag_known("f_11g"):
-            hints.append("В файле 11-G семь объектов. Один из них — не отсюда.")
+            hints.append("В файле 11-G шесть объектов. Один из них — не отсюда.")
         if not hints:
             hints.append("Я ничего не помню. Придётся рисовать наугад.")
         return hints
@@ -233,7 +230,7 @@ screen memory_canvas():
         ypos 900
         spacing 10
 
-        text ("Размещено: " + str(len(canvas_placed)) + " из 7") style "cv_text" size 17
+        text ("Размещено: " + str(len(canvas_placed)) + " из 6") style "cv_text" size 17
 
         textbutton "ЗАФИКСИРОВАТЬ ВОСПОМИНАНИЕ ▸":
             background None
@@ -242,10 +239,10 @@ screen memory_canvas():
             text_color "#c8ffd8"
             text_hover_color "#ffffff"
             text_insensitive_color "#33473d"
-            sensitive (len(canvas_placed) >= 4)
+            sensitive (len(canvas_placed) >= 3)
             action Return("done")
 
-        text "нельзя зафиксировать меньше четырёх объектов" style "cv_text" size 14 color "#33473d"
+        text "нельзя зафиксировать меньше трёх объектов" style "cv_text" size 14 color "#33473d"
 
 
 # ПОКАЗ РЕЗУЛЬТАТА ########################################################
@@ -264,7 +261,7 @@ screen canvas_verdict(result):
 
     $ _title = {"true": "ВОСПОМИНАНИЕ ПОДТВЕРЖДЕНО", "partial": "ЧАСТИЧНОЕ СОВПАДЕНИЕ", "false": "ЛОЖНОЕ ВОСПОМИНАНИЕ"}[result]
     $ _color = {"true": "#c8ffd8", "partial": "#e0b060", "false": "#d95a5a"}[result]
-    $ _pct = {"true": "100", "partial": str(int(canvas_score() * 100 / 6)), "false": str(int(canvas_score() * 100 / 6))}[result]
+    $ _pct = {"true": "100", "partial": str(int(canvas_score() * 100 / 5)), "false": str(int(canvas_score() * 100 / 5))}[result]
 
     vbox:
         xalign 0.5
