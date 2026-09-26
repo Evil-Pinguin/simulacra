@@ -30,6 +30,10 @@ init python:
         ("ach_anchor", "ЯКОРЬ", "Взять то, что лежало не для тебя."),
         ("ach_not_alone", "НЕ ОДИН", "Оставить помехи говорить."),
         ("ach_first_dive", "ГЛУБОКОЕ ПОГРУЖЕНИЕ", "Вернуться с кровью из носа."),
+        ("ach_chase", "ПО СЛЕДУ", "Не упустить того, кого не может быть."),
+        ("ach_calib_yes", "ЧИСТКА", "Выбрать покой. Заплатить памятью."),
+        ("ach_calib_no", "БОЛЬ ПРАВДЫ", "Оставить швы как есть."),
+        ("ach_ch2", "ЦЕПНАЯ РЕАКЦИЯ", "Дочитать запись 02."),
     ]
 
     JOURNAL = {
@@ -37,6 +41,10 @@ init python:
         "anomaly": ("ЧАСТОТА 62.8", "Под несущей пациента №117-У — вторая волна. Тонкая, как волос в фотоплёнке.\n\nЯ вывел её на динамики. Тошнота, дежавю. Ощущение, что я уже слышал эту частоту. Давно. Изнутри."),
         "visitor": ("ПОСЕТИТЕЛЬ", "Приходит второй день. Ищет человека — без имени, без фото. Говорит одно и то же: «Я помню, как он смеётся».\n\nОхрана вежлива. Здесь все вежливы."),
         "case117": ("ПАЦИЕНТ №117-У", "По документам — попытка самоубийства. Кейс рядовой, значимость низкая.\n\nРанние слои: деревянный дом, детство. В доме никого. Ни голосов, ни шагов.\n\nУ рядовых кейсов не бывает пустых домов."),
+        "figure": ("СИЛУЭТ", "В чужой памяти был человек. Далеко, у забора. Стоял и смотрел.\n\nВ воспоминаниях не бывает наблюдателей. Воспоминание — запись, в ней некому смотреть.\n\nОн смотрел."),
+        "reports": ("МОИ ОТЧЁТЫ", "Старые записи санаций в архиве подписаны оператором 0117-М. Некоторым — пять лет и больше. Я работаю здесь три года.\n\nМой бейдж: 0117-М.\n\nСистема переиспользует номера. Наверное."),
+        "flat": ("СВЕЖИЙ СЛОЙ", "Рывок через десятки слоёв — к самому недавнему. Городская квартира, ночь, телевизор с помехами.\n\nНа столе — лист бумаги, сложенный так же, как мой. Только его — развёрнут.\n\nЯ не успел рассмотреть, что на нём."),
+        "dream2": ("ДЕТИ", "Новый сон. Зелёный коридор, звонок — и смех. Детский, много голосов.\n\nВ моей руке — маленькая рука. Кто-то ведёт меня. Или я веду.\n\nЯ проснулся с мокрым лицом. Не помню, чтобы плакал."),
     }
 
     def unlock_ach(aid):
@@ -51,6 +59,11 @@ init python:
         if jid in JOURNAL and jid not in journal_ids:
             journal_ids.append(jid)
             renpy.show_screen("achievement_toast", JOURNAL[jid][0], "новая запись", "▮ ДНЕВНИК ОБНОВЛЁН")
+
+    def journal_remove(jid):
+        if jid in journal_ids:
+            journal_ids.remove(jid)
+            renpy.show_screen("achievement_toast", JOURNAL[jid][0], "фрагмент вычищен", "▮ ЗАПИСЬ УДАЛЕНА")
 
 
 # ГЛАВНОЕ МЕНЮ в стиле Mnemosyne. ########################################
@@ -484,9 +497,7 @@ screen neuro_calib(ta=34.0, tp=71.5, tg=52.0, tol=4.0):
                     action Return("skip")
 
 
-# МЕХАНИКА 4: сканер слоя памяти. ########################################
-
-screen mem_scanner():
+# МЕХАНИКА 4: сканер слоя памяти. ########################################screen mem_scanner():
 
     modal True
 
@@ -521,3 +532,132 @@ screen mem_scanner():
             textbutton "ПРОПУСТИТЬ ▸":
                 xalign 1.0
                 action Return("skip")
+
+
+# ГЛАВА 2: призрак вдалеке. ##############################################
+# Мерцающий силуэт в чужой памяти.
+
+transform ghost_far(x=0.62, y=0.60, z=0.30):
+    xalign x
+    yalign y
+    zoom z
+    block:
+        linear 0.14 alpha 0.75
+        linear 0.11 alpha 0.20
+        linear 0.16 alpha 0.60
+        linear 0.12 alpha 0.05
+        linear 0.18 alpha 0.65
+        repeat
+
+
+# МЕХАНИКА 5: слежение за силуэтом. ######################################
+# Кнопки направлений поверх сцены — фон не гасим, силуэт видно.
+
+screen chase_dir():
+
+    modal True
+
+    text "НЕ УПУСТИТЬ СИЛУЭТ":
+        xalign 0.5
+        ypos 46
+        size 22
+        color "#c8ffd8"
+        font "fonts/game_mono.ttf"
+        outlines [(2, "#04070a", 0, 0)]
+
+    hbox:
+        xalign 0.5
+        yalign 0.90
+        spacing 130
+
+        textbutton "◀ ВЛЕВО":
+            background None
+            text_font "fonts/game_mono.ttf"
+            text_size 28
+            text_color "#c8ffd8"
+            text_hover_color "#ffffff"
+            text_outlines [(2, "#04070a", 0, 0)]
+            action Return("l")
+
+        textbutton "▲ ПРЯМО":
+            background None
+            text_font "fonts/game_mono.ttf"
+            text_size 28
+            text_color "#c8ffd8"
+            text_hover_color "#ffffff"
+            text_outlines [(2, "#04070a", 0, 0)]
+            action Return("c")
+
+        textbutton "ВПРАВО ▶":
+            background None
+            text_font "fonts/game_mono.ttf"
+            text_size 28
+            text_color "#c8ffd8"
+            text_hover_color "#ffffff"
+            text_outlines [(2, "#04070a", 0, 0)]
+            action Return("r")
+
+
+# МЕХАНИКА 6: архив «Мои отчёты». ########################################
+
+screen my_reports(viewed):
+
+    modal True
+
+    add "bg terminal"
+    add Solid("#04070ab8")
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xpadding 55
+        ypadding 40
+        background Solid("#0a1014d9")
+
+        vbox:
+            spacing 20
+            xsize 1100
+
+            text "MNEMOSYNE // АРХИВ САНАЦИЙ — ВЫДАЧА ПО ЗАПРОСУ" color "#7fd4a8" size 24 font "fonts/game_mono.ttf"
+            text "Записи доступны оператору для служебного ознакомления." color "#517263" size 16 font "fonts/game_mono.ttf"
+
+            null height 8
+
+            textbutton "ИНЦИДЕНТ 7-Б   // санация // оператор 0117-М":
+                background None
+                text_font "fonts/game_mono.ttf"
+                text_size 21
+                text_color ("#33473d" if 0 in viewed else "#9fd8b8")
+                text_hover_color "#ffffff"
+                action Return(0)
+
+            textbutton "ИНЦИДЕНТ 9-В   // санация // оператор 0117-М":
+                background None
+                text_font "fonts/game_mono.ttf"
+                text_size 21
+                text_color ("#33473d" if 1 in viewed else "#9fd8b8")
+                text_hover_color "#ffffff"
+                action Return(1)
+
+            textbutton "ИНЦИДЕНТ 11-G  // файл повреждён":
+                background None
+                text_font "fonts/game_mono.ttf"
+                text_size 21
+                text_color ("#33473d" if 2 in viewed else "#9fd8b8")
+                text_hover_color "#ffffff"
+                action Return(2)
+
+            textbutton "ИНЦИДЕНТ 12-Н  // санация // оператор 0117-М":
+                background None
+                text_font "fonts/game_mono.ttf"
+                text_size 21
+                text_color ("#33473d" if 3 in viewed else "#9fd8b8")
+                text_hover_color "#ffffff"
+                action Return(3)
+
+            null height 14
+
+            textbutton "ЗАКРЫТЬ АРХИВ":
+                xalign 0.5
+                text_font "fonts/game_mono.ttf"
+                action Return("close")

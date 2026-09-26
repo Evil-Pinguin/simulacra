@@ -750,4 +750,4 @@ label ch1_end:
 
     centered "КОНЕЦ ПЕРВОЙ ГЛАВЫ"
 
-    return
+    jump ch2_start
