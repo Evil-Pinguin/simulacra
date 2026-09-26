@@ -28,15 +28,17 @@ transform handheld:
         repeat
 
 
-# Живое плёночное зерно — быстрое мерцание.
+# Живое плёночное зерно — телевизионное мерцание, быстрое.
 transform vhs_grain:
     block:
         alpha 0.06
-        pause 0.04
-        alpha 0.11
+        pause 0.025
+        alpha 0.12
+        pause 0.02
+        alpha 0.08
         pause 0.03
-        alpha 0.07
-        pause 0.05
+        alpha 0.11
+        pause 0.02
         repeat
 
 

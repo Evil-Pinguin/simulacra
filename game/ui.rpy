@@ -1,12 +1,5 @@
 # Оформление интерфейса «Simulacra».
 
-# Лучик света вместо системного курсора — кончик луча и есть точка клика.
-define config.mouse = {
-    "default" : [("images/light cursor.png", 5, 5)],
-    "pressed" : [("images/light cursor.png", 5, 5)],
-}
-
-
 # Меню выбора: мир гаснет в черноте, остаются только варианты.
 # Определяется после screens.rpy и заменяет стандартный экран choice.
 screen choice(items):
