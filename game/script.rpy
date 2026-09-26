@@ -3,10 +3,10 @@
 # пациента №117-У — и в чужой записи впервые слышит собственный шов.
 # Игрок видит мир только глазами Майка — его самого не показываем никогда.
 
-define m = Character("Майк", color="#aad4ff")
-define k = Character("Ким", color="#ffb3c8")
-define li = Character("Ли", color="#d8c37a")
-define sys = Character("MNEMOSYNE", color="#7fd4a8")
+define m = Character("// МАЙК", color="#aad4ff")
+define k = Character("// КИМ", color="#ffb3c8")
+define li = Character("// ЛИ", color="#d8c37a")
+define sys = Character("// MNEMOSYNE", color="#7fd4a8")
 
 # Флаги решений — пригодятся в следующих главах.
 default report_anomaly = False
@@ -23,6 +23,11 @@ label start:
 
     scene black
     with fade
+
+    sys "{cps=45}MNEMOSYNE v9.4 — инициализация…{/cps}"
+    sys "{cps=45}Архив подключён. Целостность носителя: 98.1%.{/cps}"
+    sys "{cps=45}Обнаружена незавершённая сессия. Продолжить чтение? …да.{/cps}"
+    sys "{cps=45}ЗАПИСЬ 01 // «Собственные швы». Воспроизведение.{/cps}"
 
     centered "{i}«Забыть — не значит исправить.\nИсправить можно только помня.»{/i}"
 
@@ -178,6 +183,8 @@ label ch1_day2:
     show kim smile at kim_right
     with dissolve
 
+    show screen kim_idle
+
     "Ким уже здесь. Белый халат, чокер, вечный полурастрёпанный пучок."
     "Единственный человек на этаже, у которого улыбка доходит до глаз."
 
@@ -206,6 +213,8 @@ label ch1_day2:
         k "Ничего там нет, Майк. Шум квантования плюс наводка от сети."
 
         m "На слух это не было похоже на наводку."
+
+        show kim surprised
 
         k "На слух? Ты выводил спектр на динамики?"
 
@@ -254,7 +263,11 @@ label ch1_day2:
 
     "Улыбка на секунду гаснет — и тут же возвращается на место. Профессиональная сборка."
 
+    show kim sad
+
     k "Ненавижу эту формулировку."
+
+    hide screen kim_idle
 
     hide kim
     with dissolve
@@ -328,6 +341,8 @@ label ch1_office_loop:
     show kim smile at kim_right
     with dissolve
 
+    show screen kim_idle
+
     "К середине подготовки дверь открывается — Ким. Сдала посетителя дежурному."
 
     k "Ну и денёк. Держи журнал допуска, я распишусь за проверку капсулы."
@@ -350,6 +365,8 @@ label ch1_office_loop:
 
     m "Скажу. Они запишут. Потом сотрут."
 
+    show kim wink
+
     k "Профессиональный юмор. Пять баллов, занеси себе в отчёт."
 
     "Она ставит подпись в журнале и уже у двери оборачивается."
@@ -363,6 +380,8 @@ label ch1_office_loop:
     show kim smirk
 
     k "Все так говорят."
+
+    hide screen kim_idle
 
     hide kim
     with dissolve
@@ -468,9 +487,13 @@ label ch1_dive:
     show kim smirk at kim_right
     with dissolve
 
+    show screen kim_idle
+
     k "…Серьёзно? «Глубокое погружение». В одиночку. После смены."
 
     m "Ты меня не видела."
+
+    show kim wink
 
     k "Я тебя не видела."
 
@@ -499,6 +522,8 @@ label ch1_dive:
     show kim smile
 
     k "Я — твоя страховка. Чудовища там, внутри. И с тебя кофе — нормальный, не из машины."
+
+    hide screen kim_idle
 
     hide kim
     with dissolve

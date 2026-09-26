@@ -240,44 +240,104 @@ transform kim_right:
     xalign 0.82
     yalign 1.0
 
+# Выравнивание масштаба эмоций: лицо всегда одного размера,
+# лишнее уходит под текстбокс.
+image kim smile = "images/kim smile.png"
+image kim laugh = "images/kim laugh.png"
+image kim serious = Transform("images/kim serious.png", zoom=1.18, yoffset=191)
+image kim smirk = Transform("images/kim smirk.png", zoom=1.08, yoffset=85)
+image kim surprised = Transform("images/kim surprised.png", zoom=0.97, yoffset=-32)
+image kim sad = "images/kim sad.png"
+image kim wink = Transform("images/kim wink.png", zoom=0.97, yoffset=-32)
 
-# ТОСТ ДОСТИЖЕНИЙ / ДНЕВНИКА. ############################################
+
+# ОЖИВЛЯЖ: если игрок молчит ~12 секунд, Ким переспрашивает. ############
+
+transform bubble_in:
+    on show:
+        alpha 0.0 yoffset 12
+        easein 0.3 alpha 1.0 yoffset 0
+    on hide:
+        easeout 0.3 alpha 0.0
+
+screen kim_idle():
+
+    zorder 950
+
+    default poke = 0
+
+    if poke == 0:
+        timer 12.0 action SetScreenVariable("poke", 1)
+    elif poke == 1:
+        frame at bubble_in:
+            xalign 0.80
+            ypos 120
+            background Solid("#0a1014e0")
+            padding (22, 12)
+            text "Ким: — Что такое?" size 20 color "#ffb3c8" font "fonts/game_mono.ttf"
+        timer 3.0 action SetScreenVariable("poke", 2)
+    else:
+        frame at bubble_in:
+            xalign 0.80
+            ypos 120
+            background Solid("#0a1014e0")
+            padding (22, 12)
+            text "Майк: — А… Ничего." size 20 color "#aad4ff" font "fonts/game_mono.ttf"
+        timer 2.6 action SetScreenVariable("poke", 0)
+
+
+# ДИАЛОГОВОЕ ОКНО в стиле проекта. ######################################
+
+style namebox:
+    background "#0a1014cc"
+    padding (20, 6)
+
+
+# ТОСТ ДОСТИЖЕНИЙ / ДНЕВНИКА — в духе Minecraft, но в нашем стиле:
+# плашка с иконкой съезжает сверху справа, повисает и уезжает обратно.
 
 transform ach_slide:
     xanchor 1.0
     xpos 0.99
-    ypos 40
+    ypos -180
     alpha 0.0
-    xoffset 320
-    easein 0.45 alpha 1.0 xoffset 0
-    pause 3.6
-    easeout 0.6 alpha 0.0 xoffset 60
+    easein 0.5 ypos 36 alpha 1.0
+    pause 3.8
+    easeout 0.5 ypos -180 alpha 0.0
 
 screen achievement_toast(title, desc="", header="▮ ЗАПИСЬ В ЛИЧНОЕ ДЕЛО"):
 
     zorder 2000
 
     frame at ach_slide:
-        background Solid("#0a1014ee")
-        xpadding 0
-        ypadding 0
+        background Solid("#0a1014f2")
+        xpadding 14
+        ypadding 14
 
         hbox:
-            add Solid("#7fd4a8") xsize 6 ysize 110
+            spacing 20
 
             frame:
-                background None
-                xpadding 26
-                ypadding 16
+                background Solid("#7fd4a8")
+                xpadding 2
+                ypadding 2
 
-                vbox:
-                    spacing 5
-                    text header size 15 color "#517263"
-                    text title size 25 color "#c8ffd8"
-                    if desc:
-                        text desc size 17 color "#7fd4a8"
+                frame:
+                    background Solid("#122e22")
+                    xsize 82
+                    ysize 82
 
-    timer 4.8 action Hide("achievement_toast")
+                    text "◈" size 46 color "#c8ffd8" xalign 0.5 yalign 0.5
+
+            vbox:
+                spacing 4
+                yalign 0.5
+                text header size 15 color "#517263" font "fonts/game_mono.ttf"
+                text title size 24 color "#c8ffd8" font "fonts/game_mono.ttf"
+                if desc:
+                    text desc size 16 color "#7fd4a8" font "fonts/game_mono.ttf"
+
+    timer 4.9 action Hide("achievement_toast")
 
 
 # МЕХАНИКА 1: подбор частот. #############################################
@@ -375,14 +435,15 @@ screen neuro_calib(ta=34.0, tp=71.5, tg=52.0, tol=4.0):
 
     modal True
 
-    add Solid("#04070a")
+    add "bg terminal"
+    add Solid("#04070aa8")
 
     frame:
         xalign 0.5
         yalign 0.5
         xpadding 60
         ypadding 40
-        background Solid("#0a1014")
+        background Solid("#0a1014d9")
 
         vbox:
             spacing 18
