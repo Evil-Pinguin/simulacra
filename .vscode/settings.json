@@ -1,8 +1,32 @@
 {
+    // Сгенерированные файлы не мешаются в проводнике и поиске
     "files.exclude": {
         "**/*.rpyc": true,
         "**/*.rpa": true,
         "**/*.rpymc": true,
         "**/cache/": true
-    }
+    },
+    "search.exclude": {
+        "**/*.rpyc": true,
+        "**/*.rpa": true,
+        "**/*.rpymc": true,
+        "**/cache/": true
+    },
+
+    // .rpy открывается как Ren'Py, а не как Python
+    "files.associations": {
+        "*.rpy": "renpy",
+        "*.rpym": "renpy"
+    },
+
+    // В Ren'Py отступы = синтаксис. Только 4 пробела, никаких табов.
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // Кириллица: никаких cp1251
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": false
 }
