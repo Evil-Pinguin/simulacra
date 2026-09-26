@@ -1,13 +1,67 @@
 # Оформление интерфейса и интерактивные механики «Simulacra».
 
+# ШРИФТ И ЗВУК. ##########################################################
+
+style say_dialogue:
+    font "fonts/game_serif.ttf"
+    size 25
+
+style say_label:
+    font "fonts/game_serif.ttf"
+
+style choice_button_text:
+    font "fonts/game_serif.ttf"
+
+# Мягкий щелчок на любой кнопке.
+style button:
+    activate_sound "audio/click.wav"
+
+
+# ДОСТИЖЕНИЯ И ДНЕВНИК: данные. ##########################################
+
+default journal_ids = []
+
+init python:
+
+    ACHIEVEMENTS = [
+        ("ach_met_kim", "ЗНАКОМСТВО С КИМ", "Она тебя не видела."),
+        ("ach_resonance", "РЕЗОНАНС 62.8", "Первая фиксация несущей."),
+        ("ach_anchor", "ЯКОРЬ", "Взять то, что лежало не для тебя."),
+        ("ach_not_alone", "НЕ ОДИН", "Оставить помехи говорить."),
+        ("ach_first_dive", "ГЛУБОКОЕ ПОГРУЖЕНИЕ", "Вернуться с кровью из носа."),
+    ]
+
+    JOURNAL = {
+        "kim": ("КИМ", "Оператор сопровождения. В отделении дольше всех нас — её перевели сюда давно, ещё до того, как я пришёл. Откуда и за что — не рассказывает, а я не спрашиваю.\n\nХарактер: лёгкая, насмешливая. Единственная на этаже, у кого улыбка доходит до глаз. Под улыбкой — стальная выдержка: страхует так, будто делала это всю жизнь.\n\nЛюбит: нормальный кофе (не из машины), порядок в журнале допуска, побеждать в спорах.\n\nНе любит: формулировку «в базе не значится», героизм после смены и вопросы о прежнем корпусе."),
+        "anomaly": ("ЧАСТОТА 62.8", "Под несущей пациента №117-У — вторая волна. Тонкая, как волос в фотоплёнке.\n\nЯ вывел её на динамики. Тошнота, дежавю. Ощущение, что я уже слышал эту частоту. Давно. Изнутри."),
+        "visitor": ("ПОСЕТИТЕЛЬ", "Приходит второй день. Ищет человека — без имени, без фото. Говорит одно и то же: «Я помню, как он смеётся».\n\nОхрана вежлива. Здесь все вежливы."),
+        "case117": ("ПАЦИЕНТ №117-У", "По документам — попытка самоубийства. Кейс рядовой, значимость низкая.\n\nРанние слои: деревянный дом, детство. В доме никого. Ни голосов, ни шагов.\n\nУ рядовых кейсов не бывает пустых домов."),
+    }
+
+    def unlock_ach(aid):
+        if not getattr(persistent, aid, False):
+            setattr(persistent, aid, True)
+            for a, t, d in ACHIEVEMENTS:
+                if a == aid:
+                    renpy.show_screen("achievement_toast", t, d, "▮ ЗАПИСЬ В ЛИЧНОЕ ДЕЛО")
+                    break
+
+    def journal_add(jid):
+        if jid in JOURNAL and jid not in journal_ids:
+            journal_ids.append(jid)
+            renpy.show_screen("achievement_toast", JOURNAL[jid][0], "новая запись", "▮ ДНЕВНИК ОБНОВЛЁН")
+
+
 # ГЛАВНОЕ МЕНЮ в стиле Mnemosyne. ########################################
 
 style mm_button is default
 style mm_button:
     background None
     xpadding 0
+    activate_sound "audio/click.wav"
 
 style mm_button_text is text:
+    font "fonts/game_serif.ttf"
     size 30
     color "#7fd4a8"
     hover_color "#c8ffd8"
@@ -17,19 +71,21 @@ screen main_menu():
     tag menu
 
     add "images/menubg.png"
+    add "snow_menu"
 
     vbox:
         xpos 130
-        yalign 0.82
+        yalign 0.85
         spacing 12
 
-        text "SIMULACRA" size 74 color "#c8ffd8"
+        text "SIMULACRA" size 74 color "#c8ffd8" font "fonts/game_serif.ttf"
         text "MNEMOSYNE // архив записей" size 20 color "#517263"
 
-        null height 30
+        null height 26
 
         textbutton "НАЧАТЬ ЗАПИСЬ" style "mm_button" action Start()
         textbutton "ПРОДОЛЖИТЬ" style "mm_button" action ShowMenu("load")
+        textbutton "ДОСТИЖЕНИЯ" style "mm_button" action ShowMenu("achievements")
         textbutton "НАСТРОЙКИ" style "mm_button" action ShowMenu("preferences")
         textbutton "ВЫХОД" style "mm_button" action Quit(confirm=False)
 
@@ -38,6 +94,99 @@ screen main_menu():
         yalign 0.96
         size 16
         color "#51726377"
+
+
+# ЭКРАН ДОСТИЖЕНИЙ. ######################################################
+
+screen achievements():
+
+    tag menu
+
+    add "images/menubg.png"
+    add Solid("#04070ad9")
+    add "snow_menu"
+
+    vbox:
+        xpos 130
+        ypos 110
+        spacing 30
+
+        text "ЛИЧНОЕ ДЕЛО // ДОСТИЖЕНИЯ" size 40 color "#c8ffd8" font "fonts/game_serif.ttf"
+
+        vbox:
+            spacing 22
+
+            for aid, t, d in ACHIEVEMENTS:
+
+                hbox:
+                    spacing 18
+
+                    if getattr(persistent, aid, False):
+                        add Solid("#7fd4a8") xsize 5 ysize 58
+                        vbox:
+                            spacing 4
+                            text t size 26 color "#c8ffd8"
+                            text d size 17 color "#7fd4a8"
+                    else:
+                        add Solid("#33473d") xsize 5 ysize 58
+                        vbox:
+                            spacing 4
+                            text "▮▮▮▮▮▮▮▮" size 26 color "#33473d"
+                            text "запись не расшифрована" size 17 color "#33473d"
+
+        null height 10
+
+        textbutton "◂ НАЗАД" style "mm_button" action Return()
+
+
+# ДНЕВНИК ОПЕРАТОРА. #####################################################
+
+screen journal_button():
+    zorder 900
+
+    textbutton "◈ ДНЕВНИК":
+        xpos 16
+        ypos 10
+        background None
+        text_size 17
+        text_font "fonts/game_serif.ttf"
+        text_color "#51726388"
+        text_hover_color "#c8ffd8"
+        action Show("journal_screen")
+
+screen journal_screen():
+
+    modal True
+    zorder 1500
+
+    add Solid("#04070af0")
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 26
+
+        text "ДНЕВНИК ОПЕРАТОРА" size 36 color "#c8ffd8" font "fonts/game_serif.ttf" xalign 0.5
+
+        viewport:
+            xsize 1150
+            ysize 660
+            scrollbars "vertical"
+            mousewheel True
+
+            vbox:
+                spacing 34
+
+                if not journal_ids:
+                    text "Записей пока нет." size 22 color "#517263"
+
+                for jid in journal_ids:
+                    vbox:
+                        spacing 8
+                        text JOURNAL[jid][0] size 27 color "#c8ffd8" font "fonts/game_serif.ttf"
+                        text JOURNAL[jid][1] size 20 color "#9fb8ac" font "fonts/game_serif.ttf"
+
+        textbutton "ЗАКРЫТЬ" style "mm_button" action Hide("journal_screen") xalign 0.5
 
 
 # Меню выбора: мир гаснет в черноте, остаются только варианты.
@@ -63,8 +212,7 @@ transform kim_right:
     yalign 1.0
 
 
-# ДОСТИЖЕНИЯ. ############################################################
-# Тост в стиле Mnemosyne: выезжает справа сверху, висит и гаснет сам.
+# ТОСТ ДОСТИЖЕНИЙ / ДНЕВНИКА. ############################################
 
 transform ach_slide:
     xanchor 1.0
@@ -76,7 +224,7 @@ transform ach_slide:
     pause 3.6
     easeout 0.6 alpha 0.0 xoffset 60
 
-screen achievement_toast(title, desc=""):
+screen achievement_toast(title, desc="", header="▮ ЗАПИСЬ В ЛИЧНОЕ ДЕЛО"):
 
     zorder 2000
 
@@ -95,7 +243,7 @@ screen achievement_toast(title, desc=""):
 
                 vbox:
                     spacing 5
-                    text "▮ ЗАПИСЬ В ЛИЧНОЕ ДЕЛО" size 15 color "#517263"
+                    text header size 15 color "#517263"
                     text title size 25 color "#c8ffd8"
                     if desc:
                         text desc size 17 color "#7fd4a8"
@@ -104,8 +252,6 @@ screen achievement_toast(title, desc=""):
 
 
 # МЕХАНИКА 1: подбор частот. #############################################
-# Игрок ведёт ползунок несущей частоты; чем ближе к цели — тем ровнее
-# отклик. Фиксация проходит только в зоне резонанса.
 
 default freq_value = 18.0
 
@@ -146,10 +292,12 @@ screen freq_tuner(target=62.8, tol=3.0):
                 xalign 0.5
                 action Return(abs(freq_value - target) <= tol)
 
+            textbutton "ПРОПУСТИТЬ ▸":
+                xalign 1.0
+                action Return("skip")
+
 
 # МЕХАНИКА 2: кабинет-хаб. ###############################################
-# Спокойная зона: игрок сам решает, что осмотреть. Работать можно сесть
-# только после кофе — сцена с пятном обязательна для сюжета.
 
 default office_done = set()
 
@@ -189,8 +337,6 @@ screen office_hub():
 
 
 # МЕХАНИКА 3: калибровка нейрокортекса. ##################################
-# Три контура — амплитуда, фаза, усиление. Тест проходит, только когда
-# все три сведены с эталоном.
 
 default cal_amp = 20.0
 default cal_phase = 85.0
@@ -237,14 +383,18 @@ screen neuro_calib(ta=34.0, tp=71.5, tg=52.0, tol=4.0):
             else:
                 text "— рассогласование" color "#33473d" size 17
 
-            textbutton "ЗАПУСТИТЬ ТЕСТ":
+            hbox:
                 xalign 0.5
-                action Return(abs(cal_amp - ta) <= tol and abs(cal_phase - tp) <= tol and abs(cal_gain - tg) <= tol)
+                spacing 60
+
+                textbutton "ЗАПУСТИТЬ ТЕСТ":
+                    action Return(abs(cal_amp - ta) <= tol and abs(cal_phase - tp) <= tol and abs(cal_gain - tg) <= tol)
+
+                textbutton "ПРОПУСТИТЬ ▸":
+                    action Return("skip")
 
 
 # МЕХАНИКА 4: сканер слоя памяти. ########################################
-# Сетка секторов 3×3. Игрок ищет точку перехода по отклику «теплее —
-# холоднее».
 
 screen mem_scanner():
 
@@ -277,3 +427,7 @@ screen mem_scanner():
                 textbutton "В1" xsize 150 ysize 90 action Return(6)
                 textbutton "В2" xsize 150 ysize 90 action Return(7)
                 textbutton "В3" xsize 150 ysize 90 action Return(8)
+
+            textbutton "ПРОПУСТИТЬ ▸":
+                xalign 1.0
+                action Return("skip")

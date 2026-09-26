@@ -46,6 +46,10 @@ label ch1_tuning:
 
     call screen freq_tuner(62.8, 3.0)
 
+    if _return == "skip":
+        sys "Ручной подбор пропущен. Автоподбор: несущая 62.8."
+        jump ch1_tuning_locked
+
     if _return:
         jump ch1_tuning_locked
 
@@ -55,6 +59,8 @@ label ch1_tuning:
 label ch1_tuning_locked:
 
     sys "Несущая зафиксирована: 62.8. Резонанс стабилен."
+
+    $ unlock_ach("ach_resonance")
 
     "Есть. Обычно на этом всё: спектры в отчёт, отчёт в архив, архив в никуда."
     "Но под несущей что-то есть. Вторая волна — тонкая, как волос в фотоплёнке."
@@ -94,6 +100,8 @@ label ch1_tuning_locked:
     "Жму «ОТПРАВИТЬ». Смена кончается. Фоновая мелодия провожает меня до проходной."
     "Почему-то сегодня я её слышу."
 
+    $ journal_add("anomaly")
+
 
 # СОН: ПОЛЕ ##############################################################
 
@@ -103,6 +111,8 @@ label ch1_dream_field:
     with fade
 
     "Дома я засыпаю раньше, чем успеваю поужинать."
+
+    $ vhs_mode = True
 
     scene bg snow close at handheld
     show snow_real
@@ -144,6 +154,8 @@ label ch1_dream_field:
     scene black
     with Dissolve(0.2)
 
+    $ vhs_mode = False
+
     "Будильник."
 
     "Я лежу и смотрю в потолок."
@@ -169,9 +181,7 @@ label ch1_day2:
     "Ким уже здесь. Белый халат, чокер, вечный полурастрёпанный пучок."
     "Единственный человек на этаже, у которого улыбка доходит до глаз."
 
-    if not persistent.ach_met_kim:
-        $ persistent.ach_met_kim = True
-        show screen achievement_toast("ЗНАКОМСТВО С КИМ", "Она тебя не видела.")
+    $ unlock_ach("ach_met_kim")
 
     k "Читаешь? «Десять ранних признаков расщепления сознания»."
 
@@ -236,6 +246,8 @@ label ch1_day2:
 
     hide kim
     with dissolve
+
+    $ journal_add("kim")
 
     scene bg office at handheld
     with dissolve
@@ -337,11 +349,17 @@ label ch1_office_loop:
 
     "После неё в процедурной ещё с минуту как будто теплее."
 
+    $ journal_add("visitor")
+
     sys "Подключение завершено. Требуется калибровка контуров."
 
 label ch1_calib:
 
     call screen neuro_calib
+
+    if _return == "skip":
+        sys "Ручное сведение пропущено. Автокалибровка завершена."
+        jump ch1_calib_done
 
     if _return:
         jump ch1_calib_done
@@ -369,6 +387,8 @@ label ch1_nap:
 
     "Пять минут."
 
+    $ vhs_mode = True
+
     scene bg school at handheld
     with Dissolve(1.0)
 
@@ -393,6 +413,8 @@ label ch1_nap:
 
     scene black
     with vpunch
+
+    $ vhs_mode = False
 
     li "Эй. Высыпайся дома."
 
@@ -455,6 +477,8 @@ label ch1_dive:
     hide kim
     with dissolve
 
+    $ vhs_mode = True
+
     scene vhs static
     pause 0.3
 
@@ -474,6 +498,8 @@ label ch1_dive:
 
     sys "Запись в журнал аномалий: в локации отсутствуют люди."
 
+    $ journal_add("case117")
+
     k "Смешанные воспоминания. Выглядит интересно."
 
     m "Воспоминание стабильное. Иду дальше, ищу выход к другим слоям."
@@ -485,6 +511,10 @@ label ch1_dive:
 label ch1_scan:
 
     call screen mem_scanner
+
+    if _return == "skip":
+        sys "Автопоиск: сектор Б3. Переход обнаружен."
+        jump ch1_scan_done
 
     $ scan_r = _return // 3
     $ scan_c = _return % 3
@@ -535,6 +565,8 @@ label ch1_scan_done:
             m "Забираю образец. Пометь в журнале: якорь, подоконник."
 
             k "Принято."
+
+            $ unlock_ach("ach_anchor")
 
         "Не трогать":
 
@@ -587,6 +619,8 @@ label ch1_scan_done:
             "Я не трогаю его. Источник лучше не глушить — по нему можно отследить, откуда идёт сигнал."
             "Помехи шуршат ровно, терпеливо. Как дыхание."
 
+            $ unlock_ach("ach_not_alone")
+
     k "Майк, порог перегружен. Выходи. Сейчас."
 
     m "Ещё минуту—"
@@ -599,6 +633,8 @@ label ch1_scan_done:
     scene black
     with Dissolve(0.3)
 
+    $ vhs_mode = False
+
     scene bg lab at handheld
     with fade
 
@@ -606,6 +642,8 @@ label ch1_scan_done:
     "Из носа тянется тёплая струйка. Я зажимаю переносицу привычным движением."
     "Кровь при глубоких погружениях, тремор при триггерных данных, мигрени с искажениями."
     "Это уже рутина. Я привык."
+
+    $ unlock_ach("ach_first_dive")
 
 
 # КОНЕЦ ГЛАВЫ ############################################################

@@ -1,30 +1,40 @@
-# VHS-эстетика «Simulacra»: плёночная картинка — строчная развёртка, живое
-# зерно и покачивание ручной камеры. Плюс атмосферные частицы:
-# реалистичный снег для зимних сцен и пыль для старого дома.
+# VHS-эстетика «Simulacra». Эффект плёнки включается только в записях —
+# снах и воспоминаниях (vhs_mode). Обычная реальность чистая.
+# Плюс атмосферные частицы: снег, пыль и тёмный снег главного меню.
+
+# Плёнка сейчас крутится? Ставится из сценария.
+default vhs_mode = False
 
 init python:
 
-    # Снег в два слоя: дальний — мелкий и медленный, ближний — крупный
-    # и быстрый. Показывается только в заснеженных сценах.
+    # Снег в два слоя: дальний — мелкий и медленный, ближний — крупнее
+    # и быстрее. fast=True — снег уже идёт к моменту появления сцены.
     try:
         _flake_far = Image("snow far.png")
         _flake_near = Image("snow near.png")
         renpy.image("snow_real", Fixed(
-            SnowBlossom(_flake_far, count=70, border=60, xspeed=(-40, 40), yspeed=(70, 130)),
-            SnowBlossom(_flake_near, count=16, border=130, xspeed=(-90, 90), yspeed=(200, 320)),
+            SnowBlossom(_flake_far, count=90, border=40, xspeed=(-30, 30), yspeed=(60, 110), fast=True),
+            SnowBlossom(_flake_near, count=18, border=60, xspeed=(-70, 70), yspeed=(150, 240), fast=True),
         ))
     except Exception:
         renpy.image("snow_real", Null())
 
-    # Пыль старого дома: медленно плывущие пылинки в тёплом свете.
+    # Пыль старого дома: крошечные пылинки, медленно плывущие в свете.
     try:
         _mote = Image("dust mote.png")
         renpy.image("dust_real", Fixed(
-            SnowBlossom(_mote, count=30, border=40, xspeed=(-14, 14), yspeed=(8, 24)),
-            SnowBlossom(_mote, count=14, border=40, xspeed=(-24, 24), yspeed=(16, 42)),
+            SnowBlossom(_mote, count=26, border=30, xspeed=(-12, 12), yspeed=(7, 20), fast=True),
+            SnowBlossom(_mote, count=12, border=30, xspeed=(-20, 20), yspeed=(12, 34), fast=True),
         ))
     except Exception:
         renpy.image("dust_real", Null())
+
+    # Тёмный снег для главного меню.
+    try:
+        _flake_dark = Image("snow dark.png")
+        renpy.image("snow_menu", SnowBlossom(_flake_dark, count=50, border=40, xspeed=(-25, 25), yspeed=(50, 100), fast=True))
+    except Exception:
+        renpy.image("snow_menu", Null())
 
 
 # Дыхание «плеча» — покачивание ручной камеры. Слегка с запасом кадра,
@@ -60,12 +70,14 @@ transform vhs_grain:
 screen vhs_overlay():
     zorder 1000
 
-    add "vhs scanlines"
-    add "vhs static" at vhs_grain
+    if vhs_mode:
+        add "vhs scanlines"
+        add "vhs static" at vhs_grain
 
 
 init 999 python:
     _vhs_overlays = list(config.overlay_screens or [])
-    if "vhs_overlay" not in _vhs_overlays:
-        _vhs_overlays.append("vhs_overlay")
+    for _scr in ("vhs_overlay", "journal_button"):
+        if _scr not in _vhs_overlays:
+            _vhs_overlays.append(_scr)
     config.overlay_screens = _vhs_overlays
