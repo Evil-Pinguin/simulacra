@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIMULACRA — прототип механик</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="scanlines"></div>
+
+<!-- ══════════ ФЛЕШБЕК (играется при входе в старый дом) ══════════ -->
+<div id="flashback" class="hidden">
+  <div class="fb-stage">
+    <img id="fb-img" src="assets/fb1.jpg" alt="">
+    <div class="fb-flash"></div>
+    <div class="fb-cap" id="fb-cap">ОБЪЕКТ: СТАРЫЙ ДОМ</div>
+  </div>
+  <div class="fb-ui">
+    <div class="fb-progress"><i id="fb-bar"></i></div>
+    <button id="fb-enter" class="btn hidden">ВОЙТИ В ДОМ</button>
+    <button id="fb-skip" class="btn ghost">пропустить</button>
+  </div>
+</div>
+
+<!-- ══════════ ОСНОВНОЙ ИНТЕРФЕЙС ══════════ -->
+<div id="app">
+  <header>
+    <div class="logo">SIMULACRA <span>/ прототип механик</span></div>
+    <div class="hud">
+      <div class="hud-item">СИНХРОН: <b id="hud-sync">0%</b></div>
+      <div class="hud-item">ФРАГМЕНТЫ: <b id="hud-frag">0</b></div>
+      <div class="hud-item">ПРОХОЖДЕНИЕ: <b id="hud-pass">1</b></div>
+      <button class="btn ghost tiny" id="btn-fb">▶ флешбек</button>
+      <button class="btn ghost tiny" id="btn-reset">сброс</button>
+    </div>
+  </header>
+
+  <nav id="tabs">
+    <button class="tab active" data-tab="focus">👁 Фокус внимания</button>
+    <button class="tab" data-tab="reliability">🧠 Достоверность</button>
+    <button class="tab" data-tab="repeat">🔄 Повторение</button>
+    <button class="tab" data-tab="archive">📁 Архив Майка</button>
+    <button class="tab" data-tab="canvas">🖌 Реконструкция</button>
+    <button class="tab" data-tab="sync">↔ Синхронизация</button>
+    <button class="tab" data-tab="extras">★ Extras</button>
+  </nav>
+
+  <main>
+    <!-- ─────── ФОКУС ВНИМАНИЯ ─────── -->
+    <section id="tab-focus" class="tabpage active">
+      <div class="hint">Наведи курсор на объект и <b>держи</b> взгляд ~1,2 сек. Что окажется триггером — неизвестно.</div>
+      <div class="stage" id="stage">
+        <img src="assets/corridor.jpg" alt="коридор" class="stage-img">
+        <div class="rgb rgb-r"></div><div class="rgb rgb-b"></div>
+        <div id="hotspots"></div>
+        <div id="focus-fx"></div>
+      </div>
+      <div class="log" id="focus-log"></div>
+    </section>
+
+    <!-- ─────── ДОСТОВЕРНОСТЬ ─────── -->
+    <section id="tab-reliability" class="tabpage">
+      <div class="hint">Каждый фрагмент живёт своей жизнью: стабильность падает, данные конфликтуют.</div>
+      <div class="cards" id="frag-cards"></div>
+      <div class="conflict">
+        <div class="conflict-h">⚠ ВНИМАНИЕ — конфликтующие данные по фрагменту #017</div>
+        <div class="conflict-row"><span class="who mike">Майк помнит:</span> «В комнате было <b>4</b> человека».</div>
+        <div class="conflict-row"><span class="who will">Уилл помнит:</span> «В комнате было <b>3</b> человека».</div>
+        <div class="conflict-row"><span class="who arch">Архив говорит:</span> «В комнате было <b>2</b> человека».</div>
+        <div class="conflict-foot">Истина не хранится нигде. Игрок решает сам.</div>
+      </div>
+    </section>
+
+    <!-- ─────── ПОВТОРЕНИЕ С ИЗМЕНЕНИЯМИ ─────── -->
+    <section id="tab-repeat" class="tabpage">
+      <div class="hint">Сцена повторяется. Второй раз она <b>немного другая</b>. Игра не объясняет почему.</div>
+      <div class="scene-box" id="scene-box"></div>
+      <div class="row">
+        <button class="btn" id="btn-scene">ВОЙТИ В КАБИНЕТ</button>
+        <button class="btn ghost" id="btn-newpass">начать прохождение заново</button>
+      </div>
+    </section>
+
+    <!-- ─────── АРХИВ ─────── -->
+    <section id="tab-archive" class="tabpage">
+      <div class="hint">Перетащи один факт на другой. Если связь есть — архив её найдёт.</div>
+      <div class="arch-wrap">
+        <div class="arch-panel">
+          <div class="arch-h">НАЙДЕННЫЕ ФАКТЫ</div>
+          <div class="chips" id="arch-chips"></div>
+        </div>
+        <div class="arch-panel">
+          <div class="arch-h">ВЫВОДЫ</div>
+          <div class="links" id="arch-links"><div class="empty">связей пока нет</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────── NEURAL CANVAS ─────── -->
+    <section id="tab-canvas" class="tabpage">
+      <div class="hint">Разложи фрагменты на холсте памяти и запусти реконструкцию. Неверно — получишь <b>ложное</b> воспоминание.</div>
+      <div class="canvas-progress">ВОСПОМИНАНИЕ 11-G <span id="canvas-bar" class="bar"><i></i></span></div>
+      <div class="canvas-wrap">
+        <div class="canvas" id="canvas"></div>
+        <div class="tray" id="tray"></div>
+      </div>
+      <div class="row">
+        <button class="btn" id="btn-reconstruct">РЕКОНСТРУИРОВАТЬ</button>
+        <button class="btn ghost" id="btn-clear">очистить холст</button>
+      </div>
+      <div class="verdict" id="verdict"></div>
+    </section>
+
+    <!-- ─────── СИНХРОНИЗАЦИЯ ─────── -->
+    <section id="tab-sync" class="tabpage">
+      <div class="sync-head">
+        <div class="sync-pair">WILL <span class="arrow">↔</span> MIKE</div>
+        <div class="sync-num">SYNC: <b id="sync-num">0%</b></div>
+      </div>
+      <input type="range" id="sync-range" min="0" max="100" value="0">
+      <div class="sync-scale" id="sync-scale"></div>
+      <div class="dialogue" id="sync-dialogue"></div>
+    </section>
+
+    <!-- ─────── EXTRAS ─────── -->
+    <section id="tab-extras" class="tabpage">
+      <div class="hint">Каркас главного меню и мета-систем.</div>
+      <div class="extras" id="extras"></div>
+    </section>
+  </main>
+
+  <div id="toasts"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
