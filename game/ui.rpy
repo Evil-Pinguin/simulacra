@@ -22,6 +22,51 @@ transform kim_right:
     xalign 0.82
     yalign 1.0
 
+# Позиция Резы.
+transform reza_right:
+    xalign 0.80
+    yalign 1.0
+
+
+# ДОСТИЖЕНИЯ. ############################################################
+# Тост в стиле Mnemosyne: выезжает справа сверху, висит и гаснет сам.
+
+transform ach_slide:
+    xanchor 1.0
+    xpos 0.99
+    ypos 40
+    alpha 0.0
+    xoffset 320
+    easein 0.45 alpha 1.0 xoffset 0
+    pause 3.6
+    easeout 0.6 alpha 0.0 xoffset 60
+
+screen achievement_toast(title, desc=""):
+
+    zorder 2000
+
+    frame at ach_slide:
+        background Solid("#0a1014ee")
+        xpadding 0
+        ypadding 0
+
+        hbox:
+            add Solid("#7fd4a8") xsize 6 ysize 110
+
+            frame:
+                background None
+                xpadding 26
+                ypadding 16
+
+                vbox:
+                    spacing 5
+                    text "▮ ЗАПИСЬ В ЛИЧНОЕ ДЕЛО" size 15 color "#517263"
+                    text title size 25 color "#c8ffd8"
+                    if desc:
+                        text desc size 17 color "#7fd4a8"
+
+    timer 4.8 action Hide("achievement_toast")
+
 
 # МЕХАНИКА 1: подбор частот. #############################################
 # Игрок ведёт ползунок несущей частоты; чем ближе к цели — тем ровнее
