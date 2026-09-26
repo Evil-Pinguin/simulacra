@@ -13,9 +13,13 @@ init python:
         s = store.vhs_seconds
         store.vhs_clock = "%d:%02d:%02d" % (s // 3600, (s // 60) % 60, s % 60)
 
-
-# Падающий снег поверх плёнки.
-image snow_fall = SnowBlossom("snowflake.png", count=22, border=80, speed=55)
+    # Падающий снег поверх плёнки. Регистрируется с защитой от ошибок,
+    # чтобы сбой эффекта никогда не останавливал запуск игры.
+    try:
+        _vhs_flake = Image("snowflake.png")
+        renpy.image("snow_fall", SnowBlossom(_vhs_flake, count=22, border=80, speed=55))
+    except Exception:
+        renpy.image("snow_fall", Null())
 
 
 # Дыхание «плеча» — покачивание ручной камеры.
@@ -59,7 +63,7 @@ screen vhs_overlay():
     add "vhs static" at vhs_grain
     add "snow_fall"
 
-    text "PLAY \u25b6" at vhs_blink:
+    text "PLAY ▶" at vhs_blink:
         xpos 70
         ypos 45
         size 34
