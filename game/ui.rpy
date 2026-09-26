@@ -1,16 +1,17 @@
 # Оформление интерфейса и интерактивные механики «Simulacra».
 
 # ШРИФТ И ЗВУК. ##########################################################
+# Диалоги — машинописный моноширинный: текст расшифровки записи.
+# Обводка — чтобы читалось даже на белом снегу.
 
 style say_dialogue:
-    font "fonts/game_serif.ttf"
-    size 25
+    font "fonts/game_mono.ttf"
+    size 23
+    outlines [(2, "#000000aa", 0, 0)]
 
 style say_label:
-    font "fonts/game_serif.ttf"
-
-style choice_button_text:
-    font "fonts/game_serif.ttf"
+    font "fonts/game_mono.ttf"
+    outlines [(2, "#000000aa", 0, 0)]
 
 # Мягкий щелчок на любой кнопке.
 style button:
@@ -189,21 +190,49 @@ screen journal_screen():
         textbutton "ЗАКРЫТЬ" style "mm_button" action Hide("journal_screen") xalign 0.5
 
 
-# Меню выбора: мир гаснет в черноте, остаются только варианты.
+# Меню выбора: мир гаснет, варианты парят слева и справа,
+# появляются по очереди и испаряются после нажатия.
+
+transform choice_bgfade:
+    on show:
+        alpha 0.0
+        linear 0.35 alpha 1.0
+    on hide:
+        linear 0.5 alpha 0.0
+
+transform choice_float(d=0.0):
+    on show:
+        alpha 0.0 yoffset 26
+        pause d
+        easein 0.5 alpha 1.0 yoffset 0
+        block:
+            ease 1.6 yoffset 7
+            ease 1.6 yoffset -7
+            repeat
+    on hide:
+        easeout 0.55 alpha 0.0 yoffset -46
+
 screen choice(items):
 
-    add Solid("#000000")
-
-    style_prefix "choice"
+    add Solid("#000000") at choice_bgfade
 
     vbox:
-        xalign 0.5
+        xfill True
         yalign 0.5
-        spacing gui.choice_spacing
+        spacing 64
 
-        for i in items:
+        for idx, i in enumerate(items):
 
-            textbutton i.caption action i.action
+            textbutton i.caption:
+                xalign (0.25 if idx % 2 == 0 else 0.75)
+                background None
+                text_font "fonts/game_mono.ttf"
+                text_size 30
+                text_color "#c8ffd8"
+                text_hover_color "#ffffff"
+                text_outlines [(2, "#04070a", 0, 0)]
+                at choice_float(idx * 0.18)
+                action i.action
 
 
 # Позиция Ким на сцене.
