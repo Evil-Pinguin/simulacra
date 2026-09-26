@@ -11,8 +11,7 @@ define h = Character("???", color="#aad4ff")
 label start:
 
     # Плёнка заводится.
-    show snow_fall onlayer overlaylayer
-    scene overlay static
+    scene vhs static
     pause 0.25
 
     scene black

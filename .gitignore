@@ -1,0 +1,7 @@
+# Артефакты компиляции Ren'Py — не коммитим.
+*.rpyc
+*.rpymc
+game/cache/
+log.txt
+traceback.txt
+errors.txt

@@ -3,16 +3,19 @@
 # зерно, лёгкое дрожание камеры и служебные надписи видеомагнитофона.
 
 default vhs_seconds = 0
+default vhs_clock = "0:00:00"
 default vhs_tape = "MEM-01"
 
 init python:
 
     def vhs_tick():
         store.vhs_seconds += 1
-
-    def vhs_timecode():
         s = store.vhs_seconds
-        return "SP  %d:%02d:%02d" % (s // 3600, (s // 60) % 60, s % 60)
+        store.vhs_clock = "%d:%02d:%02d" % (s // 3600, (s // 60) % 60, s % 60)
+
+
+# Падающий снег поверх плёнки.
+image snow_fall = SnowBlossom("snowflake.png", count=22, border=80, speed=55)
 
 
 # Дыхание «плеча» — покачивание ручной камеры.
@@ -49,15 +52,12 @@ transform vhs_grain:
         repeat
 
 
-# Падающий снег поверх плёнки.
-image snow_fall = SnowBlossom("snowflake.png", count=22, border=80, speed=55)
-
-
 screen vhs_overlay():
     zorder 1000
 
-    add "overlay scanlines"
-    add "overlay static" at vhs_grain
+    add "vhs scanlines"
+    add "vhs static" at vhs_grain
+    add "snow_fall"
 
     text "PLAY \u25b6" at vhs_blink:
         xpos 70
@@ -73,7 +73,7 @@ screen vhs_overlay():
         color "#d8dce2"
         outlines [(2, "#0c0c16", 0, 0)]
 
-    text "[vhs_timecode()]":
+    text "SP  [vhs_clock]":
         xalign 0.98
         ypos 1000
         size 28
@@ -84,5 +84,7 @@ screen vhs_overlay():
 
 
 init 999 python:
-    if "vhs_overlay" not in config.overlay_screens:
-        config.overlay_screens = list(config.overlay_screens) + ["vhs_overlay"]
+    _vhs_overlays = list(config.overlay_screens or [])
+    if "vhs_overlay" not in _vhs_overlays:
+        _vhs_overlays.append("vhs_overlay")
+    config.overlay_screens = _vhs_overlays
