@@ -334,7 +334,7 @@ screen kim_idle():
     default poke = 0
 
     if poke == 0:
-        timer 12.0 action SetScreenVariable("poke", 1)
+        timer 12.0 action [SetScreenVariable("poke", 1), Function(kim_voice_now, "kim_idle")]
     elif poke == 1:
         frame at bubble_in:
             xalign 0.80
