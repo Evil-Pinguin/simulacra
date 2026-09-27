@@ -26,6 +26,7 @@ default persistent.mem_links = []
 default persistent.mem_sync = 0
 default persistent.endings_seen = []
 default persistent.finished_ch3 = False
+default persistent.drawing_seen = False
 
 
 # ФРАГМЕНТЫ ПАМЯТИ: ДАННЫЕ ###############################################
@@ -184,6 +185,7 @@ init python:
         if at > store.sync_stage_seen:
             store.sync_stage_seen = at
             renpy.show_screen("achievement_toast", "SYNC " + str(at) + " // " + title, desc, "▮ СИНХРОНИЗАЦИЯ")
+            play_sys_voice("sync_" + str(at))
             if at >= 50:
                 unlock_ach("ach_sync50")
             if at >= 100:

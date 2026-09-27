@@ -35,9 +35,13 @@ label start:
         "Обнаружена незавершённая сессия. Чтение №" + str(persistent.pass_number) + ". Продолжить? …да.",
     ])
 
+    voice "voice/sys_boot.ogg"
     sys "{cps=45}MNEMOSYNE v9.4 — инициализация…{/cps}"
+    voice "voice/sys_archive.ogg"
     sys "{cps=45}Архив подключён. Целостность носителя: 98.1%%.{/cps}"
+    voice "voice/sys_session.ogg"
     sys "{cps=45}[start_session_line]{/cps}"
+    voice "voice/sys_rec01.ogg"
     sys "{cps=45}ЗАПИСЬ 01 // «Собственные швы». Воспроизведение.{/cps}"
 
     centered "{i}«Забыть — не значит исправить.\nИсправить можно только помня.»{/i}"
@@ -221,6 +225,16 @@ label ch1_day2:
     show kim laugh
 
     "Она смеётся. Легко, будто мы не в здании, где стирают людям память."
+
+    menu:
+
+        "«А третий признак?»":
+
+            k "Третий — ты начинаешь считать признаки. Всё, диагноз готов. С тебя кофе."
+
+        "♥ «У тебя красивый смех»":
+
+            call flirt_kim
 
     if report_anomaly:
 
@@ -572,6 +586,7 @@ label ch1_dive:
 
     scene black
 
+    voice "voice/sys_dive1.ogg"
     sys "Протокол «Глубокое погружение». Оператор: М. Точка входа: ранние слои."
 
     scene bg door at handheld

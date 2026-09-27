@@ -20,6 +20,9 @@ init python:
         dict(id="mike", name="МАЙК", role="оператор 0117-М",
              image=None, need=None,
              note="Не попадает в кадр."),
+        dict(id="drawing", name="ЛИСТ", role="улика 11-G",
+             image="images/drawing 11g.jpg", need="drawing_seen", wide=True,
+             note="Сложен вчетверо, уголком внутрь. Развёрнут один раз."),
     ]
 
     # Исходы. Пока их три — по реконструкции 11-G. Остальное — в следующих записях.
@@ -36,6 +39,7 @@ init python:
         ("house", "ФЛЕШБЕК: ДОМ", "replay_flashback_house", "Кадры перед дверью старого дома."),
         ("school", "ФЛЕШБЕК: ШКОЛА", "replay_flashback_school", "Кадры перед файлом 11-G."),
         ("corridor", "СОН: ЗЕЛЁНЫЙ КОРИДОР", "replay_corridor", "Фокус внимания. Найди триггеры."),
+        ("opening", "ОПЕНИНГ", "replay_opening", "Заставка архива. Голос MNEMOSYNE."),
     ]
 
     def unlock_replay(rid):
@@ -134,7 +138,7 @@ screen extras():
 screen ex_people():
 
     hbox:
-        spacing 40
+        spacing 30
 
         for e in GALLERY:
 
@@ -150,7 +154,14 @@ screen ex_people():
                     background Solid("#0a1014")
                     padding (0, 0)
 
-                    if _open:
+                    if _open and e.get("wide"):
+                        button:
+                            xfill True
+                            yfill True
+                            background None
+                            action Show("ex_portrait", None, e)
+                            add Transform(e["image"], xysize=(330, 420), fit="cover") xalign 0.5 yalign 0.5
+                    elif _open:
                         button:
                             xfill True
                             yfill True
@@ -172,6 +183,8 @@ screen ex_people():
                     text "▮▮▮▮" style "ex_head" color "#33473d"
                     text "запись не расшифрована" style "ex_text" color "#33473d" size 16
 
+    text flirt_summary() style "ex_text" color "#517263" size 15
+
 
 screen ex_portrait(e):
 
@@ -186,17 +199,36 @@ screen ex_portrait(e):
         background None
         action Hide("ex_portrait")
 
-    add e["image"]:
-        xalign 0.5
-        yalign 1.0
+    if e.get("wide"):
 
-    vbox:
-        xpos 130
-        yalign 0.5
-        spacing 10
-        text e["name"] size 54 color "#c8ffd8" font "fonts/game_serif.ttf"
-        text e["role"] style "ex_text" color "#7fd4a8"
-        text e["note"] style "ex_text" xsize 500
+        add e["image"]:
+            xalign 0.5
+            yalign 0.5
+
+        frame:
+            background Solid("#04070ad0")
+            xfill True
+            yalign 1.0
+            padding (130, 18)
+            hbox:
+                spacing 30
+                text e["name"] size 34 color "#c8ffd8" font "fonts/game_serif.ttf" yalign 0.5
+                text e["role"] style "ex_text" color "#7fd4a8" yalign 0.5
+                text e["note"] style "ex_text" yalign 0.5
+
+    else:
+
+        add e["image"]:
+            xalign 0.5
+            yalign 1.0
+
+        vbox:
+            xpos 130
+            yalign 0.5
+            spacing 10
+            text e["name"] size 54 color "#c8ffd8" font "fonts/game_serif.ttf"
+            text e["role"] style "ex_text" color "#7fd4a8"
+            text e["note"] style "ex_text" xsize 500
 
     text "щёлкни, чтобы закрыть" style "ex_text" color "#33473d" size 15 xalign 0.5 yalign 0.96
 
