@@ -1,0 +1,657 @@
+# English dialogue. key<TAB>text (keys from tools/tl/dialogue_ru.txt)
+## chapter2
+39c8cd	{cps=45}MNEMOSYNE v9.4 — session 2.{/cps}
+c49144	{cps=45}Carrier integrity: 97.4%%. Degradation within normal limits.{/cps}
+1d0194	{cps=45}RECORD 02 // "Chain Reaction". Playback.{/cps}
+82885f	Morning. I promised myself: I'll unfold it.
+ef65e2	The sheet lies on the table where I left it. White. Patient.
+d43275	I pick it up with two fingers. The paper is warm — though the room is cold.
+2951d6	My fingers find the crease. Start to pull—
+6046fc	…I'm standing at the window. The sheet lies on the table. Folded.
+9ca1e4	Eight minutes have passed. I don't remember those eight minutes.
+0c3e08	…Fine. Not today.
+952d6f	I walk past it. Pour some water, get dressed, don't look at the table.
+65a0c4	Or rather — I do look. Every few seconds. Like at a clock.
+96b2b1	On the way to work I turn around twice. No one.
+ae6600	Just a morning. Just a city. Just the back of my neck warm from someone's stare.
+e324d3	A new flyer in the lobby. "Archivist Syndrome: Four Stages."
+4af142	Stage one: obsessive dreams that look too much like records.
+decd19	Stage two: lost time, borrowed gestures, déjà vu on working frequencies.
+2da7ec	I read as far as stage two and stop.
+157355	…Coincidence.
+5a8be2	I never finished stage three. Not because I was in a hurry.
+e04a1d	[kim_greet]
+29612d	Kim is already in. I hand her a cup. Real coffee. Not from the machine.
+e09e04	What's this, a bribe?
+a5170e	It's a debt. You sat with me till late last night.
+0590d7	Debt accepted. Let the record show: Operator M. repays his debts. Rare species.
+174511	Too late. Already used to it.
+e6cb0d	She takes a sip and closes her eyes for a second. In moments like this it feels like we work somewhere ordinary.
+b7868c	Now the bad part. Lee was asking about your session yesterday.
+82b704	Asking what?
+cf2e00	Exit time. Readings. Everything he can see in the logs anyway — but he asked out loud. You understand?
+4cc1a8	I understand. Protocol.
+150da8	Protocol…
+61b098	All right. To work. Restoration today — we're bringing №117-W closer to the present.
+24b5e6	While the circuit warms up I do what I do every morning: leaf through the archive.
+23c9a8	Only today — not my own reports. Old ones. Sanitations.
+68357a	Too early. A couple more records — while the circuit loads.
+ad3f02	The tape hisses. The operator's voice — calm, professional.
+eb6d62	"…Incident 7-B contained. Witnesses: one hundred forty-three. Initiating protocol 'Amnesia'…"
+e246b6	A level voice. Not one pause too many.
+295259	"…sector sealed… children led out into the ya—… erasure by list number four…"
+1fe17f	The same voice. But something in it already trembles. Just barely — like a hair in the film.
+7ce155	INCIDENT 11-G: file corrupted. Access restricted to level "Archivist".
+395b63	Corrupted… Right. Of course.
+3375cb	The only corrupted file in the entire archive. Such a neat, pinpoint failure.
+97c991	"…witnesses: twelve. Operator requests replacement. …Request denied. Proceed."
+8d500c	At the end of the sentence the voice almost breaks. Almost.
+e51c06	I close the archive and sit without moving.
+5055f2	All the old records are signed: Operator 0117-M. Some are five years old. Seven.
+2aee8e	I've worked here three years.
+23c359	I look down at my badge. 0117-M.
+7fb413	The system reuses numbers. Probably.
+3deaa3	The circuit's warm. They're calling.
+bb7bdb	Today's goal: raise his layers closer to the present. Carefully, no jerks.
+025948	No jerks. Noted.
+fe8ea3	Noted in that diary you never show anyone?
+25be6c	That one.
+f79cec	Circuit calibration required for the new depth.
+a15132	Manual alignment skipped. Auto-calibration complete.
+d974a9	Desync. Again.
+4fdc24	Protocol "Restoration". Operator: M. Entry point: early layers, the house.
+d58028	The house. Again. The door waits as if it never closed.
+f5142b	The house greets me like an old acquaintance. The hallway, the coat, the creak of the floorboards.
+a6d777	The door at the end of the hall is open. Since that very click.
+6ea7c0	Beyond it — grey light.
+90363e	The door at the end of the hall is locked. But I have an anchor.
+48ebba	The key from the windowsill slides into the lock as if it grew there.
+034bcb	Thank you, whoever you are.
+239d1c	The door at the end of the hall is locked. I didn't take the key back then.
+6aca8c	But the window in the parlor gives — the frame is swollen with damp and doesn't even resist.
+04de53	Outside.
+d9e6e4	The yard. Grass to the knee, wet. A fence. Beyond the fence — that old house with the caved-in roof.
+09cc5c	The memory smells of rain. Someone else's memory. Smells.
+1341ee	Out of the house? Excellent. On the map the next layer is past the yard, at the edge.
+922df6	I take a dozen steps — and stop.
+8c3d04	Someone is standing by the fence.
+6b607e	Kim. There's a person in the location.
+54513b	What? No. Scanner's empty, you're the only one in the layer.
+90b766	I'm looking at him.
+274018	Mike. In the layer. Only. You.
+f74a42	The silhouette doesn't move. It just stands and watches. I can feel the direction of the gaze — like warmth on skin.
+73c97f	Then it turns and walks along the fence.
+736797	I'm going after him.
+55a3d6	Mike!.. Fine. I'm following your readings. Don't run.
+1b4db9	He doesn't turn around. He knows I'm following.
+cfcc96	A flicker on the left — behind the pickets, by the fireweed.
+b5339e	There. Didn't lose him.
+b08d53	Empty grass. Lost him…
+583c97	No. There he is. The tape jerked — and put him back in place.
+421f40	Now to the right — he slipped along the old house, right under the windows.
+f2c596	Holding on. Breathing steadier. Don't run.
+604eb2	Bushes. Fence. No one.
+6f5a4c	…There again. He's waiting. He really is waiting.
+c6f44b	And — straight ahead. Between the house and the woods, where the layer thins to a ringing.
+fd608f	A step aside — and the world went to grain at the edges. Wrong way.
+cf337a	He stops at the very edge of the layer. Where the grass breaks off into grey nothing.
+bca544	Turns his head. There's no face — distance eats it, like film.
+7f6e1f	And steps over the edge.
+e6775b	Stop!
+fe2e8c	I jump after him.
+6d6a66	MIKE! The threshold—
+b09991	…Silence.
+0f8537	A city apartment. Night. Outside the window — panel blocks, a few yellow windows.
+fc66f1	A TV is on in the corner. Static. Of course, static.
+a17f44	…ike. Mike! Can you hear me?!
+031bbe	I hear you. I'm fine.
+252ce7	Fine?! You just skipped forty layers! That doesn't happen, that's months of work!
+372803	So we saved months.
+a20ca4	I'm logging all of this, and I'm already scared of how it looks.
+bf081c	I look around. This is his apartment. The freshest layer — a stone's throw from the present.
+e0aa44	A desk by the window. A lamp. A mug. Papers.
+3d027a	And the sheet.
+12daec	In the middle of the desk lies a sheet of paper. Folded in four — no.
+7f85de	Unfolded.
+2f8ed7	…
+ddf9f7	I approach. Slowly. Like approaching someone asleep.
+6afc23	There's something on the sheet — lines, color. A child's hand. A drawing.
+b959fe	I lean in to look—
+85a92f	The TV screen flares. Static roars through the whole apartment.
+646ffa	In the window, in the room's reflection — for a second — a silhouette. Behind my back.
+879521	I turn around.
+a2fe9f	No one.
+b23c8e	When I look at the desk again — the sheet is folded. In four.
+39ae95	Threshold thirty-eight and climbing in jumps. We're out. NOW, Mike.
+569ed7	Yes. Out.
+ca7e3f	The exit hits my temples like a door.
+f4a87d	The bleeding is heavier than usual — the tissue grows heavy in seconds.
+0292ec	And in the doorway of the control room stands Lee.
+b5d0ff	Impressive session.
+5ddebe	Routine restoration.
+c6b11b	Routine. Forty layers in a single transition.
+8ce498	He isn't asking. He's stating. That's worse.
+4bc605	Per regulations, after a breakthrough like this an operator is due a preventive calibration. Gentle. Voluntary.
+b0a850	He says "voluntary" the way one says "mandatory".
+f28e2e	The office is free in ten minutes. Decide.
+56d0bf	I nod. Lee nods back — by a millimeter.
+ad4ebc	He leaves. Kim watches him go, then looks at me.
+859f2b	Mike. Calibration will take the symptoms away. It really will — I've seen it.
+e5a3e1	But?
+cc83ca	But I've also seen the ones who stopped asking questions after it. All questions.
+6d20d7	The chair is softer than it looks. The light is warm. The technician's voice — level, like that background tune.
+96cb76	Preventive calibration. Relax. Count down from ten.
+c79f68	Ten. Nine. Eight…
+40ecbd	…I wake up at home, in my own bed, and for the first time in a week — without dreams.
+b648ab	No field. No corridor. No bell.
+9066d0	My head is light. My hands don't shake.
+8f6c62	I have breakfast. Get ready.
+c57399	Already in the doorway, for some reason, I glance back at the table.
+9d561b	On the table lies a sheet of paper. Folded in four.
+c7a5e3	…Where did I get that?
+21a9a2	I put it in a drawer. Papers, who knows.
+346e33	Kim is waiting for me at the checkpoint. Smiling. Not with her eyes.
+5093ad	How did you sleep?
+39f0a1	Great. Haven't slept like that in ages.
+b2a675	Uh-huh. Great…
+d57f65	Mike. Are you sure you didn't lose anything? Yesterday.
+7d7262	…No. Why?
+4fc991	Nothing. Come on, shift's starting.
+43e9dc	I find Lee in the corridor.
+622dcf	Thanks. I'll manage.
+5005cd	Your right.
+bf0b05	A pause.
+2875af	For now.
+3b07f7	He nods and leaves. The word hangs in the corridor like a smell.
+f67f58	Good for you. The head is yours. Whatever's in it is yours too.
+41dd34	Even what was put there without me?
+762d00	…Especially that.
+823ac1	At night — the reckoning. A migraine so bad the sparks at the edge of my vision line up into scan lines.
+8da1f7	And through the pain — a dream. A new one.
+a9112e	The green corridor. The bell. But now — not emptiness.
+b6ee63	Laughter. Children's. Many voices, from behind the doors, from everywhere.
+f9f1c1	I've been here before. I look — and the corridor looks back.
+c46750	In my palm — a small hand.
+1c1671	Someone is leading me down the corridor. Or I'm the one leading.
+9b47f2	The small hand squeezes mine — trusting, tight.
+b4c613	And a voice — not mine, but from my throat:
+b04ad3	"Don't be scared. It's just a drill."
+6b7116	I wake up with a wet face.
+268d80	I don't remember crying.
+cae04c	The system is pleased. Readings normal. Dreams — clean.
+ce2383	Only the sheet in the desk drawer. And the warm back of my neck in the mornings.
+0196e7	Something is waiting. It knows how to wait.
+6a6785	The seams ache. Let them ache.
+9a77f8	Pain is memory's rough draft. So something's written there.
+b3153a	Patient №117-W is stable. His layers have been raised to the present.
+727b3c	Tomorrow — contact.
+3f3def	END OF CHAPTER TWO
+## chapter3
+2ce628	{cps=45}MNEMOSYNE v9.4 — session 3.{/cps}
+7cddfa	{cps=45}Carrier integrity: 91.2%%. Degradation rate above projection.{/cps}
+4ab3b8	{cps=45}RECORD 03 // "Stage Three". Playback.{/cps}
+bb4cc7	The morning doesn't start with an alarm clock.
+091d0a	It starts with me already standing in the doorway. Dressed. Keys in hand.
+7efa4d	I don't remember getting up. Don't remember breakfast. Judging by the sink — there was one.
+56cf11	…Fine.
+6286ee	Something rustles in my jacket pocket.
+e58943	The sheet. The one from the drawer. I didn't take it out. I definitely didn't take it out.
+586a17	The night was ragged again: the migraine let go and came back, like surf.
+fbe780	But I remember every hour. My own. Whole.
+5ffceb	Over breakfast I open the diary — a habit of the last few weeks. Write it down before it's erased.
+d87225	On the last page of the diary — an entry.
+9f7508	"UNFOLD IT. BEFORE THEY GET THERE."
+56bd8d	I didn't write that entry.
+cbbc24	The handwriting is mine.
+142e4f	…Stage three.
+bf131f	I say it out loud, calmly, like a diagnosis for a stranger.
+625efa	It's easier that way.
+4a1237	Nobody replaced the flyer in the lobby. I read it to the end. Now — to the end.
+a7dde6	"Stage three: blackouts longer than an hour. Actions performed without your participation. Notes written in your own hand."
+a8429f	"If you notice these signs — contact your supervisor immediately."
+7097ec	Contact the supervisor. Of course.
+7b9e40	The supervisor finds me himself.
+b1734f	Operator.
+3f0c8d	Shift chief.
+23d8b5	Yesterday's incident has been reviewed. A second activity profile was registered in the patient's layer.
+8d37db	An artifact. The layer's unstable after the jump.
+c0126b	Artifacts don't have a pulse. This one had a pulse.
+b02958	A pause. He looks through his glasses without blinking — like a scanner.
+fcc401	Calibration did you good. Clean readings. Don't spoil them.
+5b5e75	You refused calibration. Your right. But now every exit of yours is recorded at double depth.
+612d1f	Today's session is the patient's final layer. The board on your clearance — tomorrow at nine. Until then — not one deviation from protocol.
+91c845	He adjusts the pass on his chest. Red. The only one in the whole building.
+31b2c6	Level "Archivist". Opens everything. Even what's "corrupted".
+d9d01f	Questions?
+27d6ab	Not one.
+736757	Questions on the matter at hand?
+3b144c	First time I've heard a correct answer from you.
+7db08f	He walks off down the corridor — straight, as if along a blueprint.
+bc913e	Here. My turn today.
+2165d5	She hands me a cup. Real coffee. Not from the machine.
+563d42	We had turns?
+de07f9	…We did. You started them yourself. A week ago.
+f353e0	Ah. Yes. Of course.
+7b6b27	I don't remember any turns.
+16905a	She sees that I don't remember. I see that she sees.
+5a7a42	You look like a man who spent the night fighting his own head.
+00128e	A draw.
+ac1158	Better than last week's score already.
+110bf9	Now to business. Listen, because I'll say this out loud once and very quietly.
+f83ba1	She leans closer.
+ccfc00	Last night one-seventeen's capsule recorded a REM phase. Forty minutes. No stimulation.
+bd2eac	So what?
+cdfcae	So the erased don't dream, Mike. Nothing to dream with. And he — does.
+361ccf	She straightens up and speaks in her normal voice again:
+118539	Final layer today. We raise him to the present — and that's it, case closed.
+6a7ebe	"That's it." I nod. We both pretend to believe it.
+a4deb0	Protocol "Restoration", final stage. Operator: M. Entry point: last layer.
+90ec5b	The apartment. Night. The TV hisses — like an old acquaintance by now.
+e2c069	The last layer. An hour before he signed the request for erasure.
+989a83	Layer's stable… wait.
+3a5687	What?
+241a88	The patient's carrier drifted. It… split in two. Find the working one or the layer will collapse.
+6fdf9c	Auto-tune: carrier captured at 59.3.
+7cc123	Miss. Under my fingers — a double contour, waves beating against each other.
+e8e292	Lock. The layer evens out — and the room goes quiet.
+1db954	Too quiet. The TV is silent.
+6e4f0a	The TV in the record was never silent.
+178f45	There's a man standing at the window.
+434f5c	Not a silhouette. Not a smeared blot at the edge of the layer.
+90c858	A man. Thin, in a hospital gown. Tousled fair hair, a face as pale as an underdeveloped photograph.
+14ba84	And he's smiling. Simply, humanly — as if we saw each other yesterday.
+3fde05	Mike… I've got two profiles on the console. Do you hear me? TWO.
+8abf10	He turns his head. Slowly, without effort — as if he always knew where I was standing.
+edf6fd	You came again.
+a345d3	Then why are you breathing quieter? So you don't scare the record off?
+379193	He's right. I'm breathing every other breath.
+f37618	Who are you?
+0cfcd8	One-seventeen-W. That's how you labeled me. There used to be a name, but you labeled that too.
+da9730	I'm restoring you. By protocol. Layer by layer.
+4b4028	I know. I watched. You're careful.
+b4b3cf	The one who remembers. That's all that's left of me.
+378830	He takes a step from the window. Another. The static doesn't follow him — it comes FROM him, a fine ripple along the edges.
+a1e3e3	Eleven-G. Say it out loud, operator.
+c3abbd	…The file is corrupted.
+d5882d	The file is intact. You're the one who's corrupted.
+f18f24	He comes closer. Close. Within breathing distance.
+fa97ef	Look at me.
+0d9d28	I look.
+cf8ced	His eyes are dark, warm and very tired. And in the pupils—
+555168	The pupils reflect a room. But not this one.
+4d59fa	A green corridor. A row of doors. The light flickers in time with the static.
+1ac231	I know that corridor. I see it every night.
+dadb7a	Now you're looking.
+9ad613	I look away. At the desk. At the sheet.
+892be0	A second — and the shame of a whole lived year.
+62220c	Too soon. Fine. You always looked away first.
+1a8bbd	What do you mean, "always"?
+7aad3f	He doesn't answer.
+a9ba7f	A siren. Not in the layer — in the headphones. Real.
+d8e576	Mike, it's not me! They're tearing the session from outside, the threshold's dropping—
+f2f055	The room tilts. Will doesn't move — everything around him does.
+894f68	Zero-one-one-seven. Ask your file who was holding you by the shoulder.
+c34c12	Exit by emergency protocol is like surfacing through ice.
+d9eb13	I'm shaking. The tissue at my nose soaks through instantly.
+abaed8	Lee is standing at the main console. He's the one who cut the session.
+7cb101	There was a second profile in the layer. Active. It made contact.
+a12982	The layer's unstable, I already said—
+4e7677	It. Made. Contact. I have the audio recording, operator.
+2b8128	A silence so deep you can hear the circuit cooling.
+02577d	As of this minute you're suspended from dives until the board decides. Hand over the console. Hand over the capsule keys.
+63fa90	He holds out his hand. I put the key card in it.
+e4d3ce	And, operator…
+3ab538	For a second he takes off his glasses. Without them his face is ten years older.
+64a491	I've seen how this ends. Twice. Don't make it a third.
+e50109	He leaves. The red pass swings on his chest — a pendulum.
+e60c26	"Ask your file"…
+8f5e64	You heard.
+547441	I heard everything. And I heard Lee's recording too.
+7ffa3d	She's silent for a long time. Then — very quietly:
+93fce7	File 11-G opens only for an "Archivist". The red pass. One per building.
+2e86a9	Lee's.
+a8609e	At sixteen forty he goes to the server room. Leaves his coat in the locker room. Every day. Like a blueprint.
+c8ee2e	She looks me straight in the eye.
+dbccec	I never told you this.
+c698fa	Sixteen thirty-nine.
+b7d99f	The locker room smells of institutional soap. Lee's coat hangs third from the door — straight, like everything of his.
+75d65d	Footsteps in the corridor. I freeze.
+635015	They pass.
+609061	Inside pocket. My fingers find a hard rectangle.
+13547c	The red pass is warm — he always wears it right against his chest.
+946563	For one file. And I'll return it.
+27af49	I say it to the pocket, as if the pocket were a witness.
+cf5ead	No. Enough. One violation — and tomorrow the board eats me alive.
+c750de	I go home. I honestly go home.
+05dc86	Dinner. Shower. Bed. I even fall asleep.
+622a9b	…I'm standing in the archive room. Night.
+6f46ea	File 11-G is open on the terminal.
+bcb494	In my hand — Lee's red pass.
+37fb0a	No. No-no-no. I was at home. I was ASLEEP—
+0845c9	The clock in the corner of the screen: 02:47.
+3f7b6c	The last thing I remember — 23:10.
+c45155	Stage three. Actions performed without your participation.
+debb89	The file's already open. It'd be stupid not to read it.
+311226	The archive room. The terminal swallows the red pass without a single question.
+f8fcd7	Access level: ARCHIVIST. Incident 11-G. Restoring file… done.
+43a823	INCIDENT 11-G. Site: school №— [[data removed]. Class: 26 children, teacher, staff.
+c8b679	Sanitation witnesses: 31. Protocol "Amnesia" executed in full by Operator 0117-M.
+b9085d	Twenty-six children.
+5e8762	The green corridor. The bell. A small hand in mine.
+342dbb	Note 1: the only adult witness who refused sanitation: citizen W. Status: under observation.
+430743	Note 2: upon completion of the operation, Operator 0117-M filed a request for voluntary sanitation of his own memory. Request granted.
+6b2c5a	Witness to the erasure procedure, at the operator's request: citizen W. (in the registry: patient №117-W).
+80b4ce	I reread the last line four times.
+b8c1b9	I asked for it myself. I asked that, while I was being erased, my shoulder be held by the only person who refused to forget.
+e2f607	0117-M. 117-W.
+3fb08a	We stood in the same room. He watched. He REMEMBERS me — whole. The me I don't know.
+af3bc4	And now the system has ordered me to raise his memory to the present.
+7b1ee1	Restore the only witness — so that, once restored, he can be wiped clean. This time — by protocol.
+58f6dd	A chain reaction…
+16d2fe	Record #050 contains conflicting data. Specify the priority source.
+b9efb6	The room where I was erased. The report says two: the operator and the witness.
+2a8a26	Will said: "who was holding you by the shoulder." So someone else stood at the console. Three.
+bf41f8	And I… I remember four. The fourth stood by the door and never came in.
+32e2a7	I choose myself. Erased, unreliable — but myself.
+f92488	I choose the one who refused to forget.
+b3f075	I choose the paper. Paper doesn't remember — it keeps.
+881d29	Priority locked. Field "RECONSTRUCTION 11-G" opened. Place the objects according to the testimony of 0117-M.
+b8d1b8	The cursor blinks over the empty field. I close my eyes—
+86f685	I open my eyes. On the screen — what I drew. The file accepts the reconstruction without a single correction.
+f22b5d	Match with the testimony of 0117-M: complete. File 11-G updated.
+a184e2	And then — for the first time in all this time — I take the sheet out of my pocket.
+b6e02e	I unfold it.
+bddfa3	A green corridor. A row of doors. A red lamp at the end — with rays, the way children draw the sun.
+f30d96	Two figures walk toward it hand in hand: a tall one in white and a small one.
+c97035	At the bottom, in block letters, in wax crayon: DON'T BE SCARED.
+183549	He didn't draw this. It was drawn for him. For the one holding the hand.
+90449f	…A drill.
+3d2a20	I fold the sheet. In four, corner inward. The way it was folded.
+4c63d0	I open my eyes. On the screen — what I drew. With empty cells. The file accepts that too.
+1588d2	Match with the testimony of 0117-M: partial. File 11-G amended.
+21b4ea	I open my eyes. On the screen — what I drew. The file accepts it without question.
+a89991	So that's how it was now. For someone.
+7172b8	Match with the testimony of 0117-M: low. File 11-G overwritten.
+8ab78c	I take the pass out of the terminal.
+442ce3	I'll return it before midnight. Lee won't notice a thing.
+ae4644	…Probably.
+3310da	I take the pass out of the terminal and stare at my hand for a long time.
+5bf99d	The hand that took it. The hand that knew the code to the archive room.
+47dec4	My hand. Without me.
+644ac4	Morning comes grey, like a screen with no signal.
+424676	Kim is waiting for me at the checkpoint. You can tell from her face: she didn't sleep.
+5763bb	Well?
+036053	And one more thing. Yesterday, in the layer… I held his gaze. There was a corridor in his pupils. Green, with a row of doors.
+58d3b6	She flinches. For real, with her whole body.
+c26198	…The green corridor.
+4bc6f9	You know it.
+25ac35	Board's at nine, Mike. Let's go.
+ed6f1b	She turns away too fast. The conversation isn't over.
+63b059	It's just postponed — like everything in this place.
+daff6c	I'll tell you after the board. Everything, all of it. I promise.
+7e32eb	I'll hold you to that. I've got a good memory — enough for two.
+e838da	Board's at nine.
+eef136	In my pocket — a diary with someone else's entry in my handwriting.
+07ed8a	In my head — a corridor that doesn't belong to me. Or the only thing that does.
+20bbc2	Patient №117-W is ready to be raised to the present.
+df4821	And I'm the only one who knows what happens to him next.
+43c92a	END OF CHAPTER THREE
+## extras
+5a774e	The green corridor. The bell. Look closely.
+## flirt
+3b5957	Kim doesn't look up from the monitor. Raises a hand.
+eb5e7a	Middle finger. Level, expressionless — like an instrument reading.
+61b060	Regulations, Mike. Clause seven: workplace romance — after the end of the world.
+9ec7c0	Second time this week.
+74f4d4	The finger. Same one. She doesn't even switch hands.
+d91706	Logging it in the clearance journal. Column: "persistence".
+ce4518	She doesn't turn around. The finger finds me on its own, like a compass needle.
+5f96a8	I don't even look anymore.
+5a0de0	I noticed.
+10535c	Lee looks at me the way one looks at a typo in a protocol.
+7be81e	Noted.
+9c5374	He actually writes something down.
+49f9c4	Operator. You are overworked.
+c47cb9	He says it without turning around. To my back.
+e69d58	He smiles. Warmly, for real — so that for a second you forget where we are.
+964039	You said that back then, too.
+d9bfaf	Back when?
+b08417	Not now, Mike. Remember first. Then — everything else.
+d72753	It's not a "no". But not a "yes" either. It's an "after".
+d9cf80	Do you know how many times I've heard that?
+b3f022	As many times as you've forgotten.
+404e97	He doesn't look away. He never does.
+## script
+34501d	{cps=45}MNEMOSYNE v9.4 — initializing…{/cps}
+a594b3	{cps=45}Archive connected. Carrier integrity: 98.1%%.{/cps}
+2bf50f	{cps=45}[start_session_line]{/cps}
+d4a4c0	{cps=45}RECORD 01 // "Own Seams". Playback.{/cps}
+b5dcbc	{i}"To forget is not to fix.\nYou can only fix what you remember."{/i}
+bf113e	The "Mnemosyne" laboratory. Frequency Analysis Department. Shift from nine to nine.
+20bb0f	My name is Mike. I hold other people's memories up to the light — like film.
+4b0fcb	My console. Three monitors, an oscilloscope, a coil of cables and coffee that went cold an hour ago.
+51f05e	A duty background tune seeps from the speakers — quiet, even, the same one for years. You stop hearing it in your second week on the job.
+c57b9f	Routine today: break down the frequencies of patient №117-W and file a report on the observed data.
+0c7024	Profile №117-W loaded. Select the carrier frequency.
+5ad9a5	Well, here we go.
+a47e81	Manual tuning skipped. Auto-tune: carrier 62.8.
+3bb93b	Lock lost. In the headphones — only a rustle. Sounds like snow.
+882f05	Carrier locked: 62.8. Resonance stable.
+dd23b5	Got it. Usually that's the end of it: spectra into the report, the report into the archive, the archive into nowhere.
+aff776	But there's something under the carrier. A second wave — thin, like a hair in photographic film.
+e13440	I lean toward the monitor and do something I'm not required to do: I put it on the speakers.
+2c5155	…What was that?
+c514ce	Slight nausea. And a strange feeling — as if I'd heard this frequency before. Long ago. From inside.
+00d5d4	Déjà vu, lack of sleep, a third coffee on an empty stomach. Anything.
+4c2ed8	I open the report form. The cursor blinks over the "anomalies" field.
+469db3	I attach the spectrum. Let them check. That's the procedure.
+ddf293	And it's calmer this way — when the strange thing sits in the shared folder, it's as if it's no longer yours.
+b193ab	I leave the "anomalies" field empty.
+aca375	I don't know why. My fingers just decided before I did.
+2b1010	I hit "SEND". The shift ends. The background tune walks me to the checkpoint.
+9ec702	For some reason today I can hear it.
+0da983	At home I fall asleep before I manage to eat dinner.
+b3eb10	I dream of a field.
+dd8c21	Snow — right up close, just under my face. Grains, ice needles, grey light between them.
+10b4d7	I'm standing in the middle of a white canvas. No tracks, no road — all the way to the horizon.
+79e138	The cold is real. Too real for a dream.
+3a2c7a	Snowflakes fall on my face — slowly, one at a time, as if someone above is dropping somebody's memories.
+e08fcb	Where am I?
+877de9	A path appears underfoot. Trodden. Somebody's.
+8abcec	I walk along it, and the snow creaks evenly, like old film.
+d7e77b	And then — a door.
+94158c	The most ordinary kind: wood, a handle, a peephole. Standing in the middle of the field. No walls, no house.
+4bca04	I reach for the handle. The metal burns with cold—
+f9a910	The alarm clock.
+ce09ab	I lie there staring at the ceiling.
+08cf42	That wasn't a dream. Dreams don't look like that. That's what a record looks like.
+87cc03	…How do I know that field?
+a0d7f5	Morning. The main lobby.
+f4d9de	On the corkboard — flyers: "Ten Early Signs of a Splitting Mind." "Noticed blackouts? Contact your supervisor."
+d77113	I read them every day without reading. Today, for some reason, I read to the end.
+67f5eb	Kim is already here. White coat, choker, the eternal half-undone bun.
+1e60dc	The only person on the floor whose smile reaches her eyes.
+d2b3e3	Reading? "Ten Early Signs of a Splitting Mind."
+f3358e	Just passing by.
+d60bd2	I can save you time. Sign one — you start arguing with the flyer.
+c33aaf	And two?
+bd1254	Two — the flyer answers.
+9639c7	She laughs. Lightly, as if we weren't in a building where people's memories get erased.
+45fd16	Three — you start counting the signs. That's it, diagnosis ready. You owe me a coffee.
+cd9282	By the way, I looked at your report from yesterday. Ran the "anomalous" section twice.
+c75a06	And?
+d6371a	There's nothing there, Mike. Quantization noise plus mains hum.
+bddc0b	It didn't sound like hum.
+8db881	Sound? You put the spectrum on the speakers?
+4fbef0	A pause. Too long.
+064774	…Mike. You look at spectra with your eyes. Whoever listens to other people's frequencies ends up hearing them in the elevator.
+b7bc10	By the way. You stayed till the last minute over №117-W again yesterday. I saw the logs.
+3a5b70	Routine. Spectra, report.
+4af49c	Uh-huh. Routine. Except your "anomalies" field is empty, and your spectrum access log is four screens long.
+97d0f9	I like tidy work.
+46d606	Lying without blushing. I even respect that.
+da2105	You're probably right.
+6eb687	I'm always right. It's in the job description.
+ac4647	She's right. Kim is almost always right.
+74a5d1	But 62.8 is still ringing somewhere at the back of my skull.
+b1bdd9	All right, scatter. They pulled me in to help security — there's a visitor from yesterday, can you imagine?
+1971f8	What does he want?
+1bcf8a	Looking for someone. No name, no photo. Says: "I remember how he laughs." That's all.
+5880e7	And what will you tell him?
+cb6795	What we're supposed to. "Not in the database."
+989249	The smile goes out for a second — and snaps right back into place. Professional assembly.
+9f7775	I hate that phrase.
+b5e6b9	My office. A desk, papers, a lamp. Quiet.
+4fa077	Half an hour till the briefing. I can look around.
+c2abaf	The coffee machine hisses, strains a thin trickle into the cup.
+8e2356	I pick up the cup — and my hand jerks. On its own.
+3956a4	Coffee sloshes over the rim. A dark stain spreads across the white desk.
+a16514	I wipe it away with my sleeve, automatically. Fast, nervous — someone else's gesture.
+ead269	…Wait. I never do that.
+ae7a6d	Nonsense. An accident. I wipe the desk with a napkin like a normal person.
+7e1bd7	A stack of yesterday's reports. In the header of each — the operator ID.
+393eb1	Familiar digits. I don't even read them. Nobody reads them.
+ff1be2	Beyond the blinds — the yard. At the entrance, security gently turns away yesterday's visitor.
+1f71dc	He doesn't make a scene. Just stands and looks at the building, as if trying to remember something.
+31f3c5	Looking for someone. Everyone here is looking for someone.
+25d366	The visitor's chair. A blanket, a sagging seat.
+1b3ba3	Nobody comes to see me. The blanket has lain perfectly straight for three years now.
+39cd56	Fine. Work.
+56fb02	Second shift — entirely on №117-W.
+ff017e	Officially — an ordinary case. But professional instinct says otherwise.
+202898	I pull up articles on signal anomalies. If there really is something here, it'll make a publication. A bump to the rating, a little money.
+439391	That's how I explain it to myself. The "just curious" part I don't tell anyone. Not even myself — under my breath.
+ead880	The procedure room. I start setting up the equipment alone — Kim's still at the security desk with that visitor.
+1a073f	Neurocortex, ribbon cables, contact gel. The hands do it themselves.
+fc6540	Halfway through the setup the door opens — Kim. She handed the visitor off to the duty officer.
+42196a	What a day. Here's the clearance log, I'll sign for the capsule check.
+e18002	How's the visitor?
+fab5d7	Stood at the desk repeating the same thing. "I remember how he laughs." Forty minutes, Mike.
+163ce0	And he was...
+4a4d49	Escorted out. Politely. Everyone here is polite.
+ad65ef	She leans over the capsule, clicks the connectors — quick, practiced.
+ed144e	Contact four is oxidized again. Tell supply.
+559faa	I will. They'll write it down. Then erase it.
+7c71d8	Professional humor. Five points, put it in your report.
+1aa721	She signs the log and turns around already at the door.
+f81fcb	Staying late again today? Careful. The equipment can take more than the operator.
+5cb7e9	I'll be quick. Routine case.
+9d82e4	That's what they all say.
+b2acec	After she leaves, the procedure room feels warmer for another minute or so.
+00a131	Connection complete. Circuit calibration required.
+72453a	Test failed. Circuits misaligned — starting the alignment over.
+b12c76	Calibration passed. Circuits aligned.
+0bceb8	A memory map is built from childhood up: fresh layers are forgotten first, childhood ones hold on tightest. So the entry point goes in the early memories — and from there you climb toward the present.
+ada320	A note in the accompanying documents: "Memory erasure for the specialist — not required."
+727e8d	So the report stays with me. And I can write the article.
+21bdf4	Forty minutes till the session. I go to my office — to close my eyes. For five minutes.
+5fb3ad	Five minutes.
+902043	Not a dream again. A record again.
+0c8d76	A long corridor. Green walls — the color of a school.
+1febe5	Somewhere far off a bell is ringing. It rings and rings and never ends.
+2df466	I walk. The corridor doesn't end — doors, doors, doors.
+92a72f	Behind one of them someone is very quietly gathering paper. Sheet by sheet.
+f2be1d	I stand. The corridor pulls itself past me, like film through a tape drive.
+708ff4	The bell is getting closer. Or it isn't a bell.
+1e7c1b	I stop and look. Everything here is made of details — and one of them isn't mine.
+0e2aba	Hey. Get your sleep at home.
+a97da1	A knock at the door. I jerk my head up from the desk — neck stiff, a hum in my ears.
+b5d41b	Yes. Sorry. Coming.
+7647d3	I stand up, shove my hands into the pockets of my coat—
+549f9c	In the right pocket — a sheet of paper. Folded in four.
+7f34e5	I don't remember where I got it.
+098266	I don't unfold it. I just put it back. For some reason my hands do it very carefully. Like something fragile.
+874e35	Per regulations, case №117-W closes today as an ordinary one.
+a4a70f	I open the closing form. Look at it.
+d52a5f	And instead I launch protocol "Deep Dive".
+d89745	I'll stay after the shift. Nobody needs to know.
+04c8e3	Evening. The floor empties. I'm already in the chair, the helmet cooling my temples.
+6326ec	…Seriously? "Deep Dive". Alone. After the shift.
+06e485	You didn't see me.
+d70685	I didn't see you.
+bc9f9f	She hangs her bag on the back of a chair and sits down at the comms console.
+f24993	So I'll sit here. Invisible.
+f8013d	Don't you need to get home?
+962bcb	I do. So let's make it quick and without heroics.
+f6e6e6	She flips the switches without looking — she knows the comms console better than her own phone.
+8816cd	Simple rules. Threshold past seventy — I pull you out. Nosebleed — I pull you out. You start talking in someone else's voice…
+0f190e	You'll pull me out?
+779d37	First I record it on the dictaphone. Then I pull you out.
+d9bac3	You're a monster.
+c3bce5	I'm your insurance. The monsters are in there. And you owe me a coffee — a real one, not from the machine.
+d3cec3	Protocol "Deep Dive". Operator: M. Entry point: early layers.
+7f7112	The door. The one from the dream: wood, a handle, a peephole. Only now there's a house behind it.
+db6604	Old, wooden, with dark windows. I don't know it.
+ab5367	I reach for the handle—
+3f513c	The void spits me out into the house.
+2a972a	A wooden house. The parlor: a sideboard with dishes, a clock, lace doilies, dust in warm light.
+451200	The first layers. The childhood of patient №117-W.
+455dd9	It should be noisy here — childhood is always noisy. But the house is quiet.
+b328e1	No voices. No footsteps. No one.
+464a08	Anomaly log entry: no people present in the location.
+689fee	Mixed memories. Looks interesting.
+faa6fb	The memory's stable. Moving on, looking for a way to the other layers.
+5ec8d9	Good.
+ea345a	Scanning the layer. Determine the transition sector by response.
+4f2f51	Auto-search: sector B3. Transition found.
+ccc852	Sector B3: transition found.
+312c34	Got it! The east wall. There's something like… a window?
+052220	The response trembles — strong, but out of phase. Very close.
+e2632d	A weak response. Something's there, but farther than it seems.
+6f6d13	Quiet. In this sector — only dust and the clock.
+2ac59e	A window. Beyond the glass — a lawn, a grey fence and a house even older than this one.
+8e2273	A memory inside a memory. Nesting dolls.
+53559c	An old key lies on the windowsill.
+2675cc	I cover it with my palm. The key is warm — as if someone was just holding it.
+293d92	In the operations log an object like this is called an anchor. Anchors don't just lie around.
+6796bf	Taking a sample. Note it in the log: anchor, windowsill.
+46195d	Noted.
+73fb62	I take my hand away. Other people's anchors — other people's doors.
+9c12dd	But tearing my eyes from it is harder than it should be.
+8055d2	The hallway. The floorboards creak underfoot — in rhythm. As if they recognize the steps.
+184d3e	…Whose steps? The patient's? Or mine?
+b93917	A coat on the hook. At the end of the hall — a locked door.
+b365d7	And then I hear the hiss.
+b997f7	A TV. An old "Elektronika" under a knitted doily.
+18c05f	Switched on. On the screen — static. Grey snow that makes noise.
+1d6fd7	Kim, I've got an active signal source inside the memory.
+438c82	What? That doesn't happen. A memory is a recording, there's nothing in it to broadcast.
+1f78ff	Well, it's broadcasting.
+e0c4f2	Okay… Mike, I've got something strange on the spectrum. Your readings and his are starting to overlap.
+f08086	What do you mean — overlap?
+9ad134	I mean two profiles are drawing one curve. That doesn't happen either. What is it with today?
+f3addd	I press the button. Click. The screen collapses into a white dot.
+555ec1	The silence comes down all at once.
+57dc1d	And in that silence — the click of a lock. At the end of the hall.
+a95f2e	…The door. It opened.
+e54a77	I don't touch it. Better not to jam the source — you can trace where the signal comes from.
+ffbe1b	The static rustles evenly, patiently. Like breathing.
+2b6433	Mike, the threshold's overloaded. Get out. Now.
+18f1f3	One more minute—
+986984	Now!
+988a4f	Exit. The helmet sticks to my forehead, my temples pound.
+ec096a	A warm trickle runs from my nose. I pinch the bridge with a practiced motion.
+ee9f60	Bleeding on deep dives, tremor on trigger data, migraines with distortions.
+12955d	It's routine by now. I'm used to it.
+9ef311	We leave last. The corridors are empty, the lights on night duty.
+36bc1e	Listen… how did №117-W end up with us anyway?
+bdd3ad	On paper — a suicide attempt. Ordinary case, low significance.
+21a6a8	"Ordinary"…
+feeabf	She's silent for half a floor.
+8ee317	You know what's strange? Ordinary cases don't have empty houses.
+183e43	Or transmitters in memories.
+b49318	Or operators who stay after the shift.
+86da91	I don't answer. She isn't waiting for one.
+f4a890	Mike. If you go deeper tomorrow — tell me first. Not because of regulations.
+f1ca65	Then why?
+20fada	Because I want to know who to go after if the record cuts out.
+1ac086	At the checkpoint she's smiling again — as if nothing happened.
+c6bee2	All right. See you tomorrow. You still owe me a coffee, don't think I forgot.
+3b2f11	See you tomorrow.
+8c37bb	At home I hang the coat on the hook — and that sheet falls out of the pocket. Folded in four.
+92e687	I pick it up. Hold it.
+0e9a33	And, without unfolding it, put it on the table.
+9531f8	In the morning.
+686430	The light goes out. The sheet stays lying in the dark — white, patient.
+e84d8e	It knows how to wait. It has waited longer.
+b3e66e	END OF CHAPTER ONE

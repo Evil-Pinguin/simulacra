@@ -115,7 +115,7 @@ screen extras():
             textbutton "ИСХОДЫ" style "ex_tab" action SetScreenVariable("tab", "endings") selected (tab == "endings")
             textbutton "ПОВТОР" style "ex_tab" action SetScreenVariable("tab", "replay") selected (tab == "replay")
             textbutton "ИСТОРИЯ ВЫБОРОВ" style "ex_tab" action SetScreenVariable("tab", "choices") selected (tab == "choices")
-            textbutton ("КРУГ " + str(persistent.pass_number)) style "ex_tab" action SetScreenVariable("tab", "ngplus") selected (tab == "ngplus")
+            textbutton (_("КРУГ ") + str(persistent.pass_number)) style "ex_tab" action SetScreenVariable("tab", "ngplus") selected (tab == "ngplus")
 
         add Solid("#33473d") xsize 1660 ysize 1
 
@@ -265,7 +265,7 @@ screen ex_endings():
                         text "запись не расшифрована — следующая глава" size 17 color "#33473d"
 
         null height 6
-        text ("Достигнуто: " + str(len([e for e in persistent.endings_seen if e in [x[0] for x in ENDINGS]])) + " из " + str(len([x for x in ENDINGS if x[1] is not None]))) style "ex_text" color "#517263" size 16
+        text (_("Достигнуто: ") + str(len([e for e in persistent.endings_seen if e in [x[0] for x in ENDINGS]])) + _(" из ") + str(len([x for x in ENDINGS if x[1] is not None]))) style "ex_text" color "#517263" size 16
 
 
 # ПОВТОР ################################################################
@@ -328,7 +328,7 @@ screen ex_ngplus():
         spacing 18
         xsize 1100
 
-        text ("КРУГ " + str(persistent.pass_number)) style "ex_head"
+        text (_("КРУГ ") + str(persistent.pass_number)) style "ex_head"
 
         text "Новый круг — это не «новая игра». Реальность обнуляется: Ким снова тебя не знает, файл 11-G снова закрыт. Память — нет." style "ex_text"
         text "Фрагменты и связи Архива переходят на следующий круг. Стабильность при этом плывёт: что-то станет чётче, что-то рассыплется. Синхронизация переносится частично." style "ex_text"
@@ -336,12 +336,12 @@ screen ex_ngplus():
 
         null height 6
 
-        text ("Перенесётся: фрагментов " + str(len(persistent.mem_fragments)) + ", связей " + str(len(persistent.mem_links)) + ", синхронизация " + str(min(60, persistent.mem_sync))) style "ex_text" color "#c8ffd8"
+        text (_("Перенесётся: фрагментов ") + str(len(persistent.mem_fragments)) + _(", связей ") + str(len(persistent.mem_links)) + _(", синхронизация ") + str(min(60, persistent.mem_sync))) style "ex_text" color "#c8ffd8"
 
         null height 6
 
         if persistent.finished_ch3:
-            textbutton ("НАЧАТЬ КРУГ " + str(persistent.pass_number + 1) + " ▸") style "mm_button" action [Function(start_new_pass), Start()]
+            textbutton (_("НАЧАТЬ КРУГ ") + str(persistent.pass_number + 1) + " ▸") style "mm_button" action [Function(start_new_pass), Start()]
         else:
             text "Новый круг откроется после записи 03." style "ex_text" color "#517263"
 

@@ -178,6 +178,18 @@ if not hasattr(renpy, "exports"):
 renpy.error = _rp_error
 
 import renpy.scriptedit
+try:
+    import renpy.python
+    renpy.python.new_compile_flags
+except Exception:
+    _py = types.ModuleType("renpy.python")
+    _py.new_compile_flags = 0
+    sys.modules["renpy.python"] = _py
+    renpy.python = _py
+if not hasattr(renpy, "store"):
+    _st = types.ModuleType("store")
+    sys.modules["store"] = _st
+    renpy.store = _st
 _af = types.ModuleType("renpy.add_from")
 _af.report_missing = lambda *a, **k: None
 sys.modules["renpy.add_from"] = _af

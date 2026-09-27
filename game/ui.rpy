@@ -132,6 +132,13 @@ screen main_menu():
 
 # ЭКРАН ДОСТИЖЕНИЙ. ######################################################
 
+    hbox:
+        xalign 0.985
+        yalign 0.03
+        spacing 18
+        textbutton "RU" style "ex_tab" action Language(None) selected (_preferences.language is None)
+        textbutton "EN" style "ex_tab" action Language("english") selected (_preferences.language == "english")
+
 screen achievements():
 
     tag menu
@@ -206,11 +213,11 @@ screen journal_screen():
         text "ДНЕВНИК ОПЕРАТОРА" size 30 color "#c8ffd8" font "fonts/game_serif.ttf" yalign 0.5
 
         textbutton "ДНЕВНИК" style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "diary") selected (jtab == "diary")
-        textbutton ("ФРАГМЕНТЫ · " + str(len(found_fragments))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "frags") selected (jtab == "frags")
-        textbutton ("АРХИВ · " + str(len(archive_links)) + "/" + str(len(LINKS))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "archive") selected (jtab == "archive")
+        textbutton (_("ФРАГМЕНТЫ · ") + str(len(found_fragments))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "frags") selected (jtab == "frags")
+        textbutton (_("АРХИВ · ") + str(len(archive_links)) + "/" + str(len(LINKS))) style "ex_tab" yalign 0.5 action SetScreenVariable("jtab", "archive") selected (jtab == "archive")
 
     if sync_level > 0:
-        text ("SYNC " + bar_text(sync_level) + " " + str(sync_level) + "  " + sync_stage()[1]):
+        text ("SYNC " + bar_text(sync_level) + " " + str(sync_level) + "  " + _(sync_stage()[1])):
             xanchor 1.0
             xpos 1880
             ypos 34

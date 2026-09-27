@@ -1,0 +1,508 @@
+# English UI/data strings. key<TAB>text (keys from tools/tl/strings_ru.txt)
+## canvas
+108a35	school
+ce7899	drawing
+19bffe	Mike
+d856cc	door
+626f77	red lamp
+28a38d	unknown object
+493cd3	The red light — top right. I was looking up at it from below.
+33e06c	The door — dead center. Everything else was around it.
+099bd8	The drawing lay at the bottom, in the middle — between me and the school.
+a2d3a1	I was erased from the bottom left corner. So that's where I was.
+188da0	The school — where the field ends. Bottom right.
+5f737d	File 11-G has six objects. One of them isn't from here.
+944d11	I don't remember anything. I'll have to draw at random.
+673fc6	MEMORY 11-G // RECONSTRUCTION
+6d7d2c	Place the objects the way it was. Not the way that's convenient.
+d88f60	FROM THE FRAGMENTS:
+ea303b	Placed: 
+e2cdd6	 of 6
+fada03	COMMIT THE MEMORY ▸
+30866b	you can't commit fewer than three objects
+528a33	MEMORY CONFIRMED
+03c7a9	PARTIAL MATCH
+3bebde	FALSE MEMORY
+5b5771	Match with file 11-G: 
+8b8c53	Archive changed. File 11-G now matches the testimony of witness 0117-M.
+ea81de	The picture comes together — but not all of it. Someone else will fill the empty cells.
+00b9ed	Recorded. Now this is true as well — for someone.
+fe405b	NEXT ▸
+## chapter2
+2e6c53	You're late again.
+deb81f	You're early today.
+a9787d	You're late again. Again.
+c47b7c	You came back. I knew you would.
+4b3aef	Don't run. I'm not going anywhere.
+891f3b	Unfold it. Before they get there.
+d25e82	CALIBRATION
+81070e	fragments from source "Mike" are losing stability
+59ebfc	▮ ARCHIVE
+3fbb81	Unfold it
+4924cb	Not today
+7418bd	"Don't get used to it"
+3f7c5d	♥ "It's not a debt. It's an excuse"
+401833	Nod
+c0c081	♥ "The glasses suit you, Lee"
+94eeef	Accept calibration
+c2e00b	Refuse
+## chapter3
+f0c852	…You're a record. Records don't talk.
+33c904	You're a record. Records don't talk. You say that every time.
+648e2b	"At the operator's request."
+1bcd8b	At my request. I asked him to watch.
+b9f7a4	SOURCE: MIKE
+fb369d	stability of your own fragments grows
+45bb6b	Will
+51ca9c	SOURCE: WILL
+30c8cb	his memory becomes a little bigger than mine
+3f141f	SOURCE: ARCHIVE
+c91293	your own fragments lose stability
+d1bdcc	Draw it the way it was. Not the way that's convenient.
+e5b1eb	The file is intact. Everything's intact, Kim. Only I'm corrupted.
+3625d9	The file is intact. Only he's corrupted.
+a7adf9	"Not one"
+e7a30a	♥ "One. Do you ever smile?"
+b72ce3	♥ "And afterwards — dinner. Off protocol"
+a09f09	"Who are you really?"
+1cf1c4	♥ "You're not bad yourself. For a record"
+74b989	Hold his gaze
+ca853f	Look away
+7bb220	Take the pass
+6190eb	Don't get involved
+8e6dff	Mike: four
+f746e9	Will: three
+147c02	Archive: two
+## extras
+6608c6	KIM
+a511c3	support operator
+f1cdbc	The only one on the floor whose smile reaches her eyes.
+cbf173	LEE
+aec911	archivist
+0fb4f2	The red pass. The only one in the whole building.
+6adb48	WILL
+45b639	patient №117-W
+672fe3	Records don't call the operator by name. He did.
+7219f7	MIKE
+1f78e2	operator 0117-M
+8fa8f2	Never in frame.
+5866dd	THE SHEET
+325f97	evidence 11-G
+b9706e	Folded in four, corner inward. Unfolded once.
+678a88	11-G: AS IT WAS
+b4681b	Assemble the memory whole — and add nothing extra.
+e5f10f	11-G: NOT ALL OF IT
+e33c19	Assemble the picture with empty cells.
+1527ff	11-G: AS CONVENIENT
+3a787f	Record a false memory as the truth.
+604ac5	FLASHBACK: THE HOUSE
+c89bc0	Frames before the door of the old house.
+021f22	FLASHBACK: THE SCHOOL
+fcf206	Frames before file 11-G.
+821418	DREAM: THE GREEN CORRIDOR
+d54973	Focus of attention. Find the triggers.
+ae1d1e	OPENING
+8d3e34	The archive title sequence. The voice of MNEMOSYNE.
+c43580	ARCHIVE // RECORDS OUTSIDE THE SESSION
+6dbc8e	PEOPLE
+baed02	OUTCOMES
+502bf0	REPLAY
+0ab46e	CHOICE HISTORY
+cc85cc	LOOP 
+25999a	◂ BACK
+612cd3	NEVER\nIN FRAME
+cac1de	record not decoded
+f89643	click to close
+7f090f	outcome not reached
+08a979	record not decoded — next chapter
+80b50c	Reached: 
+27165b	 of 
+56fcaf	scene not recorded yet
+118957	Replay is tape only. It doesn't touch choices or progress.
+861c47	No choices yet. Or they've already been erased.
+c0c22d	CLEAR HISTORY
+68133c	Erase the choice history?
+38299e	A new loop is not a "new game". Reality resets: Kim doesn't know you again, file 11-G is closed again. Memory — isn't.
+b6c418	Fragments and Archive links carry over to the next loop. Their stability drifts: some get sharper, some fall apart. Synchronization carries over partially.
+93221b	Some lines sound different on a new loop. The game doesn't explain this.
+6e6421	Carries over: fragments 
+6cef46	, links 
+1a1088	, synchronization 
+5bdd48	START LOOP 
+d084b4	A new loop opens after record 03.
+ca4326	ERASE LOOPS
+28beb4	Erase memory between loops? Fragments, links and choice history will be lost.
+## flashback
+11c093	THE DOOR. THE FIELD.
+d06fa3	FLOORBOARDS. IN RHYTHM.
+a3da15	A SMALL HAND
+192b94	THE KEY. WARM.
+c3b502	THE SHEET. I NEVER UNFOLDED IT.
+ca2ff9	HISSING
+723a4e	THE BELL. IT DOESN'T END.
+603811	RED LIGHT
+9a8065	I'VE BEEN HERE BEFORE
+86f3c7	THE HOUSE
+e2588e	THE DOOR AT THE END
+74f8e5	THE FENCE. SOMEONE'S STANDING.
+a59f7b	THE SHEET. UNFOLDED.
+e584c7	THIS ISN'T CHILDHOOD
+1de4e4	THE SCHOOL
+a194e8	TWENTY-SIX
+97fcb3	ALARM
+e3d9bb	THE DRAWING
+8214a6	0117-M
+c0edf6	"DON'T BE SCARED"
+## flirt
+94af14	♥ flirt: 
+0c1552	flirt: 
+641324	 · reciprocity: 0 · security: off protocol
+## focus
+f6818e	door 101
+609619	door 107
+be2a85	lockers
+545727	red box
+1eb004	alarm
+721655	end of the corridor
+1b8294	lamp
+9196b8	stain on the floor
+624ae8	Door 101. Frosted glass, dark behind it. The handle is cold — I haven't touched it, but I know it's cold.
+621dec	Door 107. Behind it someone is very quietly folding paper. Sheet by sheet. Neatly, corner inward.
+80c1c8	Lockers. All flung open. Empty — as if they were shaken out in a hurry.
+a46266	More of the same lockers. On one — a sticker, a child's. Too worn to tell what was on it.
+756e14	A red box on the wall. The glass is intact. There should be a hose inside. There's nothing inside.
+5d3d3d	A small red box under the ceiling. The alarm. The bell is coming from here — and it doesn't end.
+a04582	The end of the corridor drowns in darkness. The lamps there aren't on. Or they are — but not for me.
+397d21	A lamp under the ceiling. Flickering — not in time with the bell. In time with something else.
+31a6b0	A stain on the linoleum. Dark, elongated. Someone stood here for a long time.
+974d1c	Door 101. The glass is broken. The shards are inside, not outside.
+7d8f7d	Door 107 is ajar. Inside — desks. On each one lies a folded sheet.
+d8eaed	The lockers are closed. All of them. Last time they were flung open — I remember that. I thought I remembered.
+af23f9	A sticker on the locker. Now I can see it: a sun with a face. A child's hand.
+abd984	The red box. The glass is broken. The hose is unrolled across the floor — into the dark.
+8b7066	The alarm is silent. The bell isn't coming from here. The bell is coming from under the floor.
+c7f664	A red light burns at the end of the corridor. It wasn't there. Or I didn't look long enough.
+b428f2	The lamp isn't flickering. It burns steadily. That's even worse.
+911fa2	The stain has grown. Or I'm standing closer.
+81666c	MOVE ON
+243aa1	look
+512875	MICRO-TRIGGER
+## memory
+77c307	TESTIMONY
+d572c9	INCIDENTS
+302002	THE FIELD
+52d07a	Snow right up against my face, a path, a door without a house. Dreams don't look like that. A record does.
+bba36f	THE VISITOR
+a8d09a	Kim
+e56d78	Looking for a man with no name and no photo. "I remember how he laughs." Not in the database.
+815e5f	THE GREEN CORRIDOR
+c01fcd	A long corridor, walls the color of a school. A bell that doesn't end. I see it every night.
+184838	THE BELL
+00aaa8	A red signal under the ceiling. In the archive that sound is called a "drill alarm". The children go out into the yard by list.
+ab7a1f	An A4 sheet, folded in four, corner inward. A child's hand. Inside — what I don't unfold.
+a6d6a4	THE KEY
+583d11	An old key on the windowsill. Warm — as if someone was just holding it. Anchors don't just lie around.
+39d51e	THE TRANSMITTER
+e6cb8e	A TV inside a memory is broadcasting. Records don't broadcast — they've nothing to do it with. This one did.
+56aa8b	Archive
+f7b849	Signatures under seven years of sanitations: Operator 0117-M. I've worked here three years. My badge: 0117-M.
+7a18e2	THE WATCHER
+e73489	A man by the fence in someone else's memory. There's no one in a record to watch. He watched.
+e0fa1e	A small palm in mine. Someone is leading me down the corridor. Or I'm leading. "Don't be scared. It's just a drill."
+bd07b2	Patient №117-W. Spoke to me inside his own memory. Records don't call the operator by name. He did.
+cf66cb	INCIDENT 11-G
+0a30b7	School №— [[data removed]. 26 children, teacher, staff. Sanitation witnesses: 31.
+3aca46	SANITATION REPORT
+8421a0	After 11-G, Operator 0117-M filed a request to erase his own memory. Witness to the procedure — at his request — citizen W.
+c9215b	THE RED LAMP
+9eb742	A red light at the end of the corridor. Source not established. It was on before the bell.
+4da725	11-G (RECONSTRUCTION)
+9d78c5	Assembled by hand. Doesn't match the archive schematic — and still feels like mine. Now this is a memory too.
+50fea4	The sheet is from the school. Folded the way children fold: in four, corner inward. It was in my pocket before I ever saw the corridor.
+77f3b5	The signature under sanitation 11-G is 0117-M. My badge. My handwriting. The system doesn't reuse numbers.
+1dd1ed	The green corridor is the school from file 11-G. I didn't dream it. I remembered it.
+9e926b	The watcher by the fence is Will. He was watching me from his own memory. He was waiting for me to come again.
+67ceba	The bell is the drill alarm. "It's just a drill." The children went out into the yard by list. A list of 26.
+bc726b	The visitor doesn't know the name. Will knows mine. Both remember the same man — the one who still knew how to laugh.
+836ccf	The transmitter in the memory is him. Will was broadcasting to me from the record while I thought I was just listening.
+75e1b6	A small hand. The drill alarm. I was leading the children out into the yard. I knew it wasn't a drill.
+59587a	The witness to my erasure is 117-W. I asked him to watch myself. So that at least someone would remember me whole.
+7401ab	The field isn't a dream. The first thing recorded after the erasure: snow, a path, a door. My first layer.
+4995f9	The key and the sheet lay in the same house, the same memory — and both ended up with me. Anchors choose for themselves.
+3180da	The red light was on while I led the child. It was on before the bell. The alarm was switched on after it all began.
+e1595b	NO LINK
+d956fa	I'm alone in my head. For now.
+a8de08	WHISPER
+d36e8f	Will hears Mike's thoughts.
+7e52bb	FOREIGN MEMORY
+2d22e4	Mike sees Will's memories as his own.
+cc4054	UNISON
+038239	They speak at the same time.
+c6fc07	SPLITTING
+746cfa	Whose eyes are you looking through right now?
+2d1eb5	MERGE
+14740a	Two signatures become one.
+c2c152	▮ SYNCHRONIZATION
+149a1d	// MIKE+117-W
+fba548	// 117-W
+cce6e8	// MIKE
+4a776f	MIKE+WILL
+f55490	MEMORY 
+961041	Source: 
+e1ae92	Stability:  
+71ae1b	Match:      
+f307a0	Memory source: 
+718375	unknown
+818f65	confirmed
+4224f7	⚠ WARNING. The fragment contains conflicting data.
+abe419	⚠ Low stability: the detail may fall apart on the next access.
+141d91	COMMIT
+bbae6f	ALREADY IN THE ARCHIVE
+dd5316	this link is known
+31665a	LINK NOT CONFIRMED
+388bac	for now
+d26ae8	 to synchronization
+fbaa95	▮ LINK FOUND
+454626	No fragments yet. They are found in dreams, in someone else's memory and in the archive.
+d9da5b	CONCLUSIONS  
+4f4827	Drag one fact onto another.
+b3187f	no links yet
+d5d7c5	No fragments yet.
+c66542	Stability 
+faa1df	Match     
+7ce904	⚠ conflicting data
+5144bc	 · RECORD 
+## opening
+4b8f97	MNEMOSYNE v9.4 // core loaded
+1b7331	carrier: 0117-M …… connected
+412a4d	integrity: 98.1%
+4ad7c8	record archive: 3 …… access granted
+59a6c6	witnesses: 31 …… status: sanitized
+a9769e	anomalies: 1 …… status: active
+d37bc0	MNEMOSYNE // record archive
+d2bf8c	records 01–03 // operator 0117-M
+15ab57	click to skip
+## screens (template)
+2b0b02	Back
+63fb7e	History
+b7d1c9	Skip
+6c12ce	Auto
+74ea58	Save
+9d54a8	Q.Save
+f107c4	Q.Load
+aeafb7	Prefs
+79b5d7	Start
+23641d	Load
+c919d6	Preferences
+d5bf02	End Replay
+8d30f6	Main Menu
+099edc	About
+1e6e5f	Help
+8ef2d6	Quit
+14c8fd	Return
+292297	Version [config.version!t]\n
+975afe	Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]
+829bc8	Page {}
+109831	Automatic saves
+55ee0b	Quick saves
+3e65ca	empty slot
+cecded	{#auto_page}A
+e3816d	{#quick_page}Q
+a1fbb6	Display
+884f47	Window
+ab3b44	Fullscreen
+8b2c66	Unseen Text
+8d6991	After Choices
+8d35fc	Transitions
+0577df	Language
+a5c072	Русский
+687458	Text Speed
+720472	Auto-Forward Time
+710845	Music Volume
+0fa9bd	Sound Volume
+16497f	Test
+0f92e2	Voice Volume
+9f6351	Mute All
+ef45e2	The dialogue history is empty.
+f33ac6	Keyboard
+8d9384	Mouse
+f885c0	Gamepad
+d50e9e	Advances dialogue and activates the interface.
+2b83bb	Space
+754c12	Advances dialogue without selecting choices.
+c501a8	Arrow Keys
+9fe54f	Navigate the interface.
+9ad012	Accesses the game menu.
+987a14	Skips dialogue while held down.
+145d08	Toggles dialogue skipping.
+6ae9f9	Rolls back to earlier dialogue.
+4e9e1b	Rolls forward to later dialogue.
+1037fa	Hides the user interface.
+028bd2	Takes a screenshot.
+d7c291	Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.
+691322	Opens the accessibility menu.
+88303c	Left Click
+4cb99c	Middle Click
+df365a	Right Click
+173579	Mouse Wheel Up\nClick Rollback Side
+772be0	Mouse Wheel Down
+39f808	Right Trigger\nA/Bottom Button
+7608f8	Left Trigger\nLeft Shoulder
+0872c7	Right Shoulder
+c0e827	D-Pad, Sticks
+db3c19	Y/Top Button
+e952fa	Calibrate
+e04af9	Yes
+d0cd22	No
+27da45	Skipping
+ceac57	Menu
+## script
+89556d	// KIM
+14d447	// LEE
+a5daea	Unfinished session detected. Continue reading? …yes.
+351a85	Unfinished session detected. Repeat reading. Continue? …yes.
+f0ce9a	Unfinished session detected. Reading №[[n]. Continue? …yes.
+a69e5b	You're early today. Again.
+e85a6b	Attach the second wave to the report
+f6d95b	Keep it to myself
+c76ad5	"And the third sign?"
+619424	♥ "You have a beautiful laugh"
+6f08f4	Go forward
+18b82e	Stand still
+ed8117	Take the key
+14d8de	Don't touch it
+bbd43a	Switch it off
+4dec9d	Leave it on
+## ui: achievements
+70fc13	MEETING KIM
+93af09	She didn't see you.
+675adb	RESONANCE 62.8
+a5f736	First carrier lock.
+23fbe3	ANCHOR
+52f2f3	Take what wasn't left for you.
+c6f2b0	NOT ALONE
+b9372e	Let the static speak.
+ae6a23	DEEP DIVE
+d33443	Come back with a nosebleed.
+956b60	ON THE TRAIL
+39dd8b	Don't lose the one who can't exist.
+22c75e	CLEANSING
+c12712	Choose peace. Pay with memory.
+bb3892	THE PAIN OF TRUTH
+875db9	Leave the seams as they are.
+410668	CHAIN REACTION
+e4b5b0	Finish record 02.
+5d2773	CONTACT
+9e3cc8	Speak to the one who can't exist.
+500233	WITHOUT LOOKING AWAY
+feae7a	Hold his gaze to the end.
+05ce19	ARCHIVIST
+fa0b27	Open the corrupted file with your own hands.
+ca4422	STAGE THREE
+4d9044	Finish record 03.
+1eb07e	FIRST FRAGMENT
+e66281	Find what shouldn't be in your head.
+403b5f	Hold your gaze on the right detail.
+5566b8	LINK FOUND
+47dfd0	Connect two facts in the Archive.
+968cac	INVESTIGATOR
+cc568a	Five links in the Archive.
+63d44e	THE REAL ONE
+cfc063	Assemble 11-G the way it was.
+d8a627	THE FALSE ONE
+e72cca	Assemble 11-G the convenient way.
+bc244a	Synchronization 50: someone else's memories as your own.
+7fb665	Synchronization 100: two signatures become one.
+6aaa33	THE MIDDLE FINGER
+118496	Get an exhaustive answer from Kim.
+0bb24d	ON ALL FRONTS
+16d313	Try your luck with everyone. Unsuccessfully.
+cef6ae	DON'T BE SCARED
+4a2390	Unfold the sheet.
+## ui: journal
+c7a907	Support operator. Been in the department longer than any of us — transferred here long ago, before I arrived. From where and for what — she doesn't say, and I don't ask.\n\nCharacter: light, teasing. The only one on the floor whose smile reaches her eyes. Under the smile — steel composure: she covers you as if she's done it all her life.\n\nLikes: real coffee (not from the machine), a tidy clearance log, winning arguments.\n\nDislikes: the phrase "not in the database", heroics after the shift, and questions about her previous building.
+fea44b	FREQUENCY 62.8
+6881d7	Under the carrier of patient №117-W — a second wave. Thin, like a hair in photographic film.\n\nI put it on the speakers. Nausea, déjà vu. A feeling that I've heard this frequency before. Long ago. From inside.
+d2c3a9	Second day he's come. Looking for a man — no name, no photo. Says the same thing over and over: "I remember how he laughs."\n\nSecurity is polite. Everyone here is polite.
+60eb23	PATIENT №117-W
+0681b4	On paper — a suicide attempt. Ordinary case, low significance.\n\nEarly layers: a wooden house, childhood. No one in the house. No voices, no footsteps.\n\nOrdinary cases don't have empty houses.
+345ebd	THE SILHOUETTE
+d5a6cd	There was a person in someone else's memory. Far off, by the fence. Standing and watching.\n\nThere are no watchers in memories. A memory is a recording; there's no one in it to watch.\n\nHe watched.
+3970ad	MY REPORTS
+44f5e6	The old sanitation records in the archive are signed by Operator 0117-M. Some are five years old and more. I've worked here three years.\n\nMy badge: 0117-M.\n\nThe system reuses numbers. Probably.
+728887	THE FRESH LAYER
+2bf936	A jump across dozens of layers — to the most recent. A city apartment, night, a TV full of static.\n\nOn the desk — a sheet of paper folded the same way as mine. Only his — unfolded.\n\nI didn't get to see what was on it.
+a05cd4	THE CHILDREN
+19a875	A new dream. The green corridor, the bell — and laughter. Children's, many voices.\n\nIn my hand — a small hand. Someone is leading me. Or I'm leading.\n\nI woke up with a wet face. I don't remember crying.
+ea1485	SOMEONE ELSE'S HANDWRITING
+b55f1b	On the last page of this diary — an entry I didn't make.\n\n"UNFOLD IT. BEFORE THEY GET THERE."\n\nThe handwriting is mine.
+e18c8b	THE RED PASS
+045001	Access level "Archivist". Opens everything — including corrupted files.\n\nThere's only one such pass in the whole building. It hangs around Lee's neck.
+8dbbc7	Patient №117-W. I spoke with him inside his own memory.\n\nRecords don't talk. Records don't call the operator by name.\n\nHe did.
+8f2535	Incident 11-G. Witnesses: 31, of them children: 26.\n\nAfter the sanitation, Operator 0117-M filed a request to erase his own memory. Witness to the procedure: patient №117-W.\n\n0117-M. 117-W. We stood in the same room.
+622204	▮ ENTRY IN PERSONNEL FILE
+e3ddbf	new entry
+8d6320	▮ DIARY UPDATED
+5386e5	fragment purged
+0a435d	▮ ENTRY DELETED
+## ui: menus & screens
+fa988c	START RECORD
+10e1db	CONTINUE
+0f549c	ACHIEVEMENTS
+32cade	ARCHIVE
+b01b46	SETTINGS
+8cb1ef	QUIT
+0626d6	RECORD 01 // 62.8 units
+1da266	PERSONNEL FILE // ACHIEVEMENTS
+b773d4	◈ DIARY
+5af168	OPERATOR'S DIARY
+97467a	DIARY
+7b32f5	FRAGMENTS · 
+49d20c	ARCHIVE · 
+a5de61	No entries yet.
+1f1c8f	CLOSE
+d7c2ce	Kim: — What is it?
+d23681	Mike: — Ah… Nothing.
+899bba	MNEMOSYNE // FREQUENCY ANALYSIS — PATIENT №117-W
+57d3b6	Guide the carrier. The closer the frequency — the steadier the response.
+bb8310	CARRIER: [freq_value:.1f] units
+03acac	RESPONSE: RESONANCE. The signal holds steady.
+05040a	RESPONSE: strong. Almost in phase.
+f91bfb	RESPONSE: weak. Something's there.
+89d8d8	RESPONSE: noise.
+7dcf10	LOCK FREQUENCY
+41ffe1	SKIP ▸
+cffeed	▸ Coffee machine
+6e01fc	▸ Papers on the desk
+69e382	▸ Window
+4b5c3f	▸ Chair
+c82747	Sit down to work
+0b1764	MNEMOSYNE // NEUROCORTEX CALIBRATION
+b31e67	Align three circuits with the reference. The tolerance is narrow.
+5d30fd	AMPLITUDE: [cal_amp:.1f]
+ca99e4	— circuit aligned
+9ef792	— misaligned
+9f3626	PHASE: [cal_phase:.1f]
+e39c72	GAIN: [cal_gain:.1f]
+88626c	RUN TEST
+e66731	LAYER SCAN // select a sector
+d9dfa5	A1
+ee02c1	A2
+e4ff6a	A3
+fad736	B1
+082a59	B2
+84b87e	B3
+932d40	C1
+e9a061	C2
+4f85d6	C3
+a4c9bf	DON'T LOSE THE SILHOUETTE
+e0b04d	◀ LEFT
+0f3169	▲ STRAIGHT
+390bfa	RIGHT ▶
+f8bb5c	MNEMOSYNE // SANITATION ARCHIVE — ISSUED ON REQUEST
+9c8405	Records available to the operator for official review.
+a54946	INCIDENT 7-B   // sanitation // operator 0117-M
+eaab71	INCIDENT 9-C   // sanitation // operator 0117-M
+23e082	INCIDENT 11-G  // file corrupted
+04015e	INCIDENT 12-H  // sanitation // operator 0117-M
+b1613d	CLOSE ARCHIVE

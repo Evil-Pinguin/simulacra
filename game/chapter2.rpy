@@ -84,9 +84,10 @@ label ch2_lobby:
 
     show screen kim_idle
 
-    $ kim_greet = variant(["Ты опять опоздал.", "Ты сегодня рано.", "Ты опять опоздал. Опять."])
+    $ kim_greet_ru = variant(["Ты опять опоздал.", "Ты сегодня рано.", "Ты опять опоздал. Опять."])
+    $ kim_greet = _(kim_greet_ru)
 
-    $ kim_voice(KIM_GREET_VOICE.get(kim_greet, ""))
+    $ kim_voice(KIM_GREET_VOICE.get(kim_greet_ru, ""))
     k "[kim_greet]"
 
     "Ким уже на месте. Я протягиваю ей стакан. Нормальный кофе. Не из машины."

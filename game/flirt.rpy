@@ -32,8 +32,8 @@ init python:
         """Строка для Архива."""
         parts = []
         for k in ("kim", "lee", "will"):
-            parts.append(FLIRT_NAMES[k] + " " + str(flirt_total(k)))
-        return "флирт: " + " · ".join(parts) + " · взаимность: 0 · охрана: вне протокола"
+            parts.append(_(FLIRT_NAMES[k]) + " " + str(flirt_total(k)))
+        return _("флирт: ") + " · ".join(parts) + _(" · взаимность: 0 · охрана: вне протокола")
 
 
 # КИМ ####################################################################

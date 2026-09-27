@@ -30,9 +30,9 @@ label start:
     with fade
 
     $ start_session_line = variant([
-        "Обнаружена незавершённая сессия. Продолжить чтение? …да.",
-        "Обнаружена незавершённая сессия. Повторное чтение. Продолжить? …да.",
-        "Обнаружена незавершённая сессия. Чтение №" + str(persistent.pass_number) + ". Продолжить? …да.",
+        _("Обнаружена незавершённая сессия. Продолжить чтение? …да."),
+        _("Обнаружена незавершённая сессия. Повторное чтение. Продолжить? …да."),
+        _("Обнаружена незавершённая сессия. Чтение №[[n]. Продолжить? …да.").replace("[[n]", str(persistent.pass_number)),
     ])
 
     voice "voice/sys_boot.ogg"
@@ -216,9 +216,10 @@ label ch1_day2:
 
     $ unlock_ach("ach_met_kim")
 
-    $ kim_greet = variant(["Ты сегодня рано.", "Ты опять опоздал.", "Ты сегодня рано. Опять."])
+    $ kim_greet_ru = variant(["Ты сегодня рано.", "Ты опять опоздал.", "Ты сегодня рано. Опять."])
+    $ kim_greet = _(kim_greet_ru)
 
-    $ kim_voice(KIM_GREET_VOICE.get(kim_greet, ""))
+    $ kim_voice(KIM_GREET_VOICE.get(kim_greet_ru, ""))
     k "[kim_greet]"
 
     $ kim_voice("kim_001")

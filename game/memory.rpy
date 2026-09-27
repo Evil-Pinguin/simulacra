@@ -184,7 +184,7 @@ init python:
         at, title, desc = sync_stage()
         if at > store.sync_stage_seen:
             store.sync_stage_seen = at
-            renpy.show_screen("achievement_toast", "SYNC " + str(at) + " // " + title, desc, "▮ СИНХРОНИЗАЦИЯ")
+            renpy.show_screen("achievement_toast", "SYNC " + str(at) + " // " + _(title), _(desc), "▮ СИНХРОНИЗАЦИЯ")
             play_sys_voice("sync_" + str(at))
             if at >= 50:
                 unlock_ach("ach_sync50")
@@ -201,7 +201,7 @@ init python:
             return "// МАЙК+117-У"
         if s >= 90 and renpy.random.random() < 0.5:
             return "// 117-У" if base == "МАЙК" else "// МАЙК"
-        return "// " + base
+        return "// МАЙК" if base == "МАЙК" else "// 117-У"
 
     def sync_say(mike_line, will_line=None):
         """Реплика, которая ведёт себя по-разному в зависимости от синхронизации."""
@@ -243,7 +243,7 @@ screen sync_hud():
             ypos 12
             spacing 1
 
-            text ("МАЙК+УИЛЛ" if sync_level >= 100 else "WILL // MIKE"):
+            text (_("МАЙК+УИЛЛ") if sync_level >= 100 else "WILL // MIKE"):
                 xalign 1.0
                 size 12
                 color "#51726399"
@@ -289,16 +289,16 @@ screen fragment_card(fid, compact=False):
 
             hbox:
                 xfill True
-                text ("ВОСПОМИНАНИЕ " + f["num"]) size 26 color "#c8ffd8" font "fonts/game_mono.ttf"
-                text ("Источник: " + f["src"]) size 18 color ("#d95a5a" if f["unknown"] else "#7fd4a8") font "fonts/game_mono.ttf" xalign 1.0 yalign 0.5
+                text (_("ВОСПОМИНАНИЕ ") + f["num"]) size 26 color "#c8ffd8" font "fonts/game_mono.ttf"
+                text (_("Источник: ") + _(f["src"])) size 18 color ("#d95a5a" if f["unknown"] else "#7fd4a8") font "fonts/game_mono.ttf" xalign 1.0 yalign 0.5
 
             text f["title"] size 32 color "#ffffff" font "fonts/game_serif.ttf"
 
             null height 4
 
-            text ("Стабильность:  " + bar_text(st) + "  " + str(st) + "%") size 18 color "#9fd8b8" font "fonts/game_mono.ttf"
-            text ("Совпадение:    " + bar_text(f["match"]) + "  " + str(f["match"]) + "%") size 18 color "#9fd8b8" font "fonts/game_mono.ttf"
-            text ("Источник воспоминания: " + ("неизвестен" if f["unknown"] else "подтверждён")) size 16 color "#517263" font "fonts/game_mono.ttf"
+            text (_("Стабильность:  ") + bar_text(st) + "  " + str(st) + "%") size 18 color "#9fd8b8" font "fonts/game_mono.ttf"
+            text (_("Совпадение:    ") + bar_text(f["match"]) + "  " + str(f["match"]) + "%") size 18 color "#9fd8b8" font "fonts/game_mono.ttf"
+            text (_("Источник воспоминания: ") + (_("неизвестен") if f["unknown"] else _("подтверждён"))) size 16 color "#517263" font "fonts/game_mono.ttf"
 
             if f["conflict"]:
                 text "⚠ ВНИМАНИЕ. Фрагмент содержит конфликтующие данные." size 16 color "#e0b060" font "fonts/game_mono.ttf"
@@ -356,8 +356,8 @@ init python:
         store.archive_links.append(key)
         add_sync(link["sync"])
         renpy.show_screen("achievement_toast",
-                          frag(a)["title"] + " + " + frag(b)["title"],
-                          "+" + str(link["sync"]) + " к синхронизации",
+                          _(frag(a)["title"]) + " + " + _(frag(b)["title"]),
+                          "+" + str(link["sync"]) + _(" к синхронизации"),
                           "▮ СВЯЗЬ ОБНАРУЖЕНА")
         unlock_ach("ach_link")
         if len(store.archive_links) >= 5:
@@ -431,7 +431,7 @@ screen archive_board():
                         vbox:
                             spacing 2
                             text f["title"] size 18 color "#c8ffd8" font "fonts/game_mono.ttf"
-                            text (f["num"] + " · " + f["src"] + " · " + str(frag_stab(f))) size 13 color "#517263" font "fonts/game_mono.ttf"
+                            text (f["num"] + " · " + _(f["src"]) + " · " + str(frag_stab(f))) size 13 color "#517263" font "fonts/game_mono.ttf"
 
     # Выводы
     vbox:
@@ -440,7 +440,7 @@ screen archive_board():
         xsize 560
         spacing 10
 
-        text ("ВЫВОДЫ  " + str(len(archive_links)) + " / " + str(len(LINKS))) size 16 color "#517263" font "fonts/game_mono.ttf"
+        text (_("ВЫВОДЫ  ") + str(len(archive_links)) + " / " + str(len(LINKS))) size 16 color "#517263" font "fonts/game_mono.ttf"
 
         if found_fragments:
             text "Перетащи один факт на другой." size 14 color "#33473d" font "fonts/game_mono.ttf"
@@ -461,7 +461,7 @@ screen archive_board():
                         padding (14, 12)
                         vbox:
                             spacing 4
-                            text (frag(l["a"])["title"] + "  +  " + frag(l["b"])["title"]) size 13 color "#517263" font "fonts/game_mono.ttf"
+                            text (_(frag(l["a"])["title"]) + "  +  " + _(frag(l["b"])["title"])) size 13 color "#517263" font "fonts/game_mono.ttf"
                             text l["out"] size 17 color "#c8ffd8" font "fonts/game_serif.ttf"
 
                 if not known_links():
@@ -498,14 +498,14 @@ screen fragment_list():
                             xsize 1050
                             hbox:
                                 spacing 18
-                                text ("ВОСПОМИНАНИЕ " + f["num"]) size 16 color "#7fd4a8" font "fonts/game_mono.ttf"
+                                text (_("ВОСПОМИНАНИЕ ") + f["num"]) size 16 color "#7fd4a8" font "fonts/game_mono.ttf"
                                 text f["title"] size 22 color "#c8ffd8" font "fonts/game_serif.ttf"
                             text f["text"] size 17 color "#9fb8ac" font "fonts/game_serif.ttf"
                         vbox:
                             spacing 4
-                            text ("Источник: " + f["src"]) size 14 color ("#d95a5a" if f["unknown"] else "#7fd4a8") font "fonts/game_mono.ttf"
-                            text ("Стабильность " + bar_text(st) + " " + str(st) + "%") size 14 color "#9fd8b8" font "fonts/game_mono.ttf"
-                            text ("Совпадение   " + bar_text(f["match"]) + " " + str(f["match"]) + "%") size 14 color "#9fd8b8" font "fonts/game_mono.ttf"
+                            text (_("Источник: ") + _(f["src"])) size 14 color ("#d95a5a" if f["unknown"] else "#7fd4a8") font "fonts/game_mono.ttf"
+                            text (_("Стабильность ") + bar_text(st) + " " + str(st) + "%") size 14 color "#9fd8b8" font "fonts/game_mono.ttf"
+                            text (_("Совпадение   ") + bar_text(f["match"]) + " " + str(f["match"]) + "%") size 14 color "#9fd8b8" font "fonts/game_mono.ttf"
                             if f["conflict"]:
                                 text "⚠ конфликтующие данные" size 13 color "#e0b060" font "fonts/game_mono.ttf"
 

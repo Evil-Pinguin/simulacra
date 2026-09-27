@@ -120,7 +120,7 @@ screen focus_scene(hotspots, seen, leave_text="ИДТИ ДАЛЬШЕ"):
             ypos 0.90
             spacing 4
 
-            text ("◈ " + _label):
+            text ("◈ " + _(_label)):
                 xalign 0.5
                 size 22
                 color "#c8ffd8"
@@ -146,7 +146,7 @@ screen focus_scene(hotspots, seen, leave_text="ИДТИ ДАЛЬШЕ"):
 
     timer FOCUS_TICK repeat True action Function(focus_tick, hotspots)
 
-    textbutton (leave_text + " ▸"):
+    textbutton (_(leave_text) + " ▸"):
         xalign 0.97
         ypos 0.09
         background None

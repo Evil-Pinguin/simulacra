@@ -222,7 +222,7 @@ screen memory_canvas():
             spacing 4
             text "ИЗ ФРАГМЕНТОВ:" style "cv_text" color "#7fd4a8" size 15
             for h in canvas_hints()[:5]:
-                text ("· " + h) style "cv_text" size 15
+                text ("· " + _(h)) style "cv_text" size 15
 
     # Состояние и завершение
     vbox:
@@ -230,7 +230,7 @@ screen memory_canvas():
         ypos 900
         spacing 10
 
-        text ("Размещено: " + str(len(canvas_placed)) + " из 6") style "cv_text" size 17
+        text (_("Размещено: ") + str(len(canvas_placed)) + _(" из 6")) style "cv_text" size 17
 
         textbutton "ЗАФИКСИРОВАТЬ ВОСПОМИНАНИЕ ▸":
             background None
@@ -270,7 +270,7 @@ screen canvas_verdict(result):
         at cv_result_in
 
         text _title style "cv_text" size 40 color _color xalign 0.5
-        text ("Совпадение с файлом 11-G: " + _pct + "%") style "cv_text" size 20 xalign 0.5
+        text (_("Совпадение с файлом 11-G: ") + _pct + "%") style "cv_text" size 20 xalign 0.5
 
         if result == "true":
             text "Архив изменён. Файл 11-G теперь совпадает с показаниями свидетеля 0117-М." style "cv_text" size 17 color "#7fd4a8" xalign 0.5
