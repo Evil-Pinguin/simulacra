@@ -113,6 +113,7 @@ screen opening():
 label splashscreen:
 
     $ unlock_replay("opening")
+    play music "music/menu.ogg" fadein 2.0
     $ play_sys_voice("sys_open")
 
     scene black

@@ -11,6 +11,8 @@ label ch2_start:
 
     $ chapter_tag = "02"
 
+    play music "music/menu.ogg" fadein 2.0
+
     scene black
     with fade
 
@@ -62,6 +64,8 @@ label ch2_morning:
 # ХОЛЛ: ФЛАЕР И КОФЕ #####################################################
 
 label ch2_lobby:
+
+    play music "music/office.ogg" fadein 2.5
 
     scene bg lobby at handheld
     with fade
@@ -281,6 +285,8 @@ label ch2_dive:
 
     scene black
 
+    play music "music/dive.ogg" fadein 3.0
+
     voice "voice/sys_dive2.ogg"
     sys "Протокол «Восстановление». Оператор: М. Точка входа: ранние слои, дом."
 
@@ -361,6 +367,8 @@ label ch2_dive:
 
 label ch2_chase_intro:
 
+    play music "music/chase.ogg" fadein 0.8
+
     "Он не оборачивается. Он знает, что я иду следом."
 
     $ whisper("Не беги. Я никуда не денусь.")
@@ -436,6 +444,8 @@ label ch2_chase_done:
 # СВЕЖИЙ СЛОЙ ############################################################
 
 label ch2_flat:
+
+    play music "music/dive.ogg" fadein 2.0
 
     scene bg flat at handheld
     with Dissolve(0.4)
@@ -521,6 +531,8 @@ label ch2_flat:
 
 label ch2_exit:
 
+    play music "music/office.ogg" fadein 2.5
+
     scene bg lab at handheld
     with fade
 
@@ -592,6 +604,8 @@ label ch2_calib_yes:
 
     $ calib_accept = True
     $ unlock_ach("ach_calib_yes")
+
+    play music "music/menu.ogg" fadein 3.0
 
     scene bg capsule at handheld
     with fade
@@ -714,6 +728,8 @@ label ch2_calib_no:
 
     "Ночью — расплата. Мигрень такая, что искры по краям зрения складываются в строчки развёртки."
 
+    play music "music/corridor.ogg" fadein 1.5
+
     $ vhs_mode = True
 
     scene bg school at handheld
@@ -761,6 +777,8 @@ label ch2_corridor_look:
 
 label ch2_end:
 
+    play music "music/ending.ogg" fadein 3.0
+
     scene black
     with fade
 
@@ -785,6 +803,8 @@ label ch2_end:
     pause 0.4
 
     scene black
+
+    stop music fadeout 2.5
 
     centered "КОНЕЦ ВТОРОЙ ГЛАВЫ"
 

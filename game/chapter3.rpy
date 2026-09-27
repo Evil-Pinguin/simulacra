@@ -13,6 +13,8 @@ label ch3_start:
 
     $ chapter_tag = "03"
 
+    play music "music/menu.ogg" fadein 2.0
+
     scene black
     with fade
 
@@ -63,6 +65,8 @@ label ch3_morning:
 # ХОЛЛ: ЛИ ###############################################################
 
 label ch3_lobby:
+
+    play music "music/office.ogg" fadein 2.5
 
     scene bg lobby at handheld
     with fade
@@ -225,6 +229,8 @@ label ch3_dive:
 
     scene black
 
+    play music "music/dive.ogg" fadein 3.0
+
     voice "voice/sys_dive3.ogg"
     sys "Протокол «Восстановление», финальная стадия. Оператор: М. Точка входа: последний слой."
 
@@ -372,6 +378,8 @@ label ch3_tuned:
 
 label ch3_confront:
 
+    play music "music/menu.ogg" fadein 2.0
+
     scene bg lab at handheld
     with fade
 
@@ -488,6 +496,8 @@ label ch3_blackout:
     scene white
     with Dissolve(0.15)
 
+    play music "music/corridor.ogg" fadein 3.0
+
     scene bg terminal at handheld
     with Dissolve(0.4)
 
@@ -507,6 +517,8 @@ label ch3_blackout:
 
 
 label ch3_file:
+
+    play music "music/corridor.ogg" fadein 3.0
 
     scene bg terminal at handheld
     with fade
@@ -667,6 +679,8 @@ label ch3_file_read:
 
 label ch3_end:
 
+    play music "music/ending.ogg" fadein 3.0
+
     scene black
     with fade
 
@@ -741,6 +755,8 @@ label ch3_end:
     pause 0.4
 
     scene black
+
+    stop music fadeout 3.0
 
     centered "КОНЕЦ ТРЕТЬЕЙ ГЛАВЫ"
 

@@ -51,6 +51,8 @@ label start:
     "Лаборатория «Mnemosyne». Отдел частотного анализа. Смена с девяти до девяти."
     "Меня зовут Майк. Я слушаю чужую память на просвет — как плёнку."
 
+    play music "music/office.ogg" fadein 3.0
+
     scene bg lab at handheld
     with fade
 
@@ -128,6 +130,8 @@ label ch1_tuning_locked:
 
 label ch1_dream_field:
 
+    play music "music/corridor.ogg" fadein 2.0
+
     scene black
     with fade
 
@@ -175,6 +179,8 @@ label ch1_dream_field:
     scene black
     with Dissolve(0.2)
 
+    stop music fadeout 1.5
+
     $ vhs_mode = False
 
     "Будильник."
@@ -190,6 +196,8 @@ label ch1_dream_field:
 # АКТ I: ПЕРВАЯ ТРЕЩИНА ##################################################
 
 label ch1_day2:
+
+    play music "music/office.ogg" fadein 2.0
 
     scene bg lobby at handheld
     with fade
@@ -482,6 +490,8 @@ label ch1_calib_done:
 
 label ch1_nap:
 
+    play music "music/corridor.ogg" fadein 1.5
+
     scene black
     with fade
 
@@ -524,6 +534,8 @@ label ch1_corridor_look:
     if _return != "leave":
         call focus_examine(_return, corridor_seen, CORRIDOR_NOTES_1)
         jump ch1_corridor_look
+
+    stop music fadeout 0.4
 
     scene black
     with vpunch
@@ -619,6 +631,8 @@ label ch1_dive:
 
     voice "voice/sys_dive1.ogg"
     sys "Протокол «Глубокое погружение». Оператор: М. Точка входа: ранние слои."
+
+    play music "music/dive.ogg" fadein 3.0
 
     scene bg door at handheld
     show snow_real
@@ -796,6 +810,8 @@ label ch1_scan_done:
 
     $ vhs_mode = False
 
+    play music "music/office.ogg" fadein 3.0
+
     scene bg lab at handheld
     with fade
 
@@ -811,6 +827,8 @@ label ch1_scan_done:
 # КОНЕЦ ГЛАВЫ ############################################################
 
 label ch1_end:
+
+    play music "music/ending.ogg" fadein 3.0
 
     scene black
     with fade
@@ -865,6 +883,8 @@ label ch1_end:
     pause 0.4
 
     scene black
+
+    stop music fadeout 2.5
 
     centered "КОНЕЦ ПЕРВОЙ ГЛАВЫ"
 
